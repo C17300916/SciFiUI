@@ -3,20 +3,14 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PVector;
 
-public class Radar
+public class Radar extends UiObject
 {
-    private float radius;
-    private PVector pos;
-    private float frequency;
-    private UI ui;
+    
     private float theta = 0;
 
     public Radar(UI ui, float frequency, float x, float y, float radius)
     {
-        this.ui = ui;
-        this.frequency = frequency;
-        pos = new PVector(x, y);
-        this.radius = radius;
+        super(ui, frequency, x, y, radius);
     }
 
     public void render()

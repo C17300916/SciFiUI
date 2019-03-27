@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class UI extends PApplet
@@ -8,6 +10,8 @@ public class UI extends PApplet
     MovingCircle mc;
 
     boolean[] keys = new boolean[1024];
+
+    public ArrayList<UiObject> uiObjects = new ArrayList<UiObject>();
 
     public void keyPressed()
     {
@@ -35,8 +39,8 @@ public class UI extends PApplet
     public void setup()
     {
         b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .75f, 50);
-        radar = new Radar(this, 1, width / 2, height / 2, 100);
+        uiObjects.add(new MovingCircle(this, 0, width / 2, height * .75f, 25));
+        uiObjects.add(new Radar(this, 1, width / 2, height / 2, 100));
     }
 
     Radar radar;
@@ -46,11 +50,12 @@ public class UI extends PApplet
         background(0);
         b.render();
 
-        mc.update();
-        mc.render();
-
-        radar.update();
-        radar.render();
+        for(int i= uiObjects.size() - 1; i >= 0; i--)
+        {
+            UiObject b = uiObjects.get(i);
+            b.render();
+            b.update();
+        }      
 
         if (checkKey(LEFT))
         {

@@ -2,29 +2,21 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class MovingCircle
+public class MovingCircle extends UiObject
 {
-    private float x;
     private float dx = 1;
-    private float y;
-    private float diameter;
-    private float radius;
-    UI ui;
+   
 
-    public MovingCircle(UI ui, float x, float y, float diameter)
+    public MovingCircle(UI ui,float frequency, float x, float y, float radius)
     {
-        this.ui = ui;
-        this.x = x;
-        this.y = y;
-        this.diameter = diameter;
-        radius = diameter / 2;
+       super(ui, frequency, x, y, radius);
     }
     
     public void render()
     {
         ui.stroke(255);
         ui.noFill();
-        ui.ellipse(x, y, diameter, diameter);
+        ui.ellipse(x, y, radius * 2, radius * 2);
         ui.fill(255);
         // Static field
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
