@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+
 import processing.core.PVector;
 
 public class Radar extends UiObject
@@ -36,7 +36,7 @@ public class Radar extends UiObject
 
     public void update()
     {
-        theta += PApplet.TWO_PI * timeDelta * frequency;
+        theta += ui.TWO_PI * timeDelta * frequency;
     }
 
     /**
