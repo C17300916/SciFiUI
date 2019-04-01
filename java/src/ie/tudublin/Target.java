@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PVector;
+
 
 public class Target extends UiObject
 {
@@ -25,10 +25,17 @@ public class Target extends UiObject
         ui.stroke(0, 255, 0);
         
 
-        float halfSize = size / 2;
+        float circleSize = size / 9;
         
         ui.rect(ui.mouseX, ui.mouseY, size, size);
-        
+
+        ui.fill(0,255,0);
+        ui.circle(ui.mouseX, ui.mouseY, circleSize);
+        ui.line(ui.mouseX - size/1.5f , ui.mouseY , ui.mouseX - size/3, ui.mouseY);
+        ui.line(ui.mouseX + size/1.5f , ui.mouseY , ui.mouseX + size/3, ui.mouseY);
+        ui.line(ui.mouseX , ui.mouseY + size/1.5f  , ui.mouseX , ui.mouseY + size/3);
+        ui.line(ui.mouseX  , ui.mouseY - size/1.5f, ui.mouseX , ui.mouseY - size/3);
+
         
         
         ui.popMatrix();
