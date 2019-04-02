@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-
+import processing.core.PConstants;
 
 public class Target extends UiObject
 {
@@ -23,7 +23,8 @@ public class Target extends UiObject
         
         
         ui.stroke(0, 255, 0);
-        
+        ui.noFill();
+        ui.rectMode(PConstants.CENTER);
 
         float circleSize = size / 9;
         
