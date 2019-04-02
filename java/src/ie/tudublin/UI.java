@@ -31,7 +31,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(1200, 800);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(P3D); 
     }
@@ -43,6 +43,7 @@ public class UI extends PApplet
         uiObjects.add(new Radar(this, 1, width / 2, height / 2, 100));
         uiObjects.add(new Target(this, width / 2, height/2));
         rectMode(CENTER);
+        uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         noCursor();
     }
 

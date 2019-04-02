@@ -43,7 +43,10 @@ public class Target extends UiObject
 
     public void update()
     {
-
+        if (ui.checkKey(' ') )
+        {
+            ui.stroke(255,0,0);
+        }
         
         
     }
