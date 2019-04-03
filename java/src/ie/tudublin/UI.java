@@ -40,11 +40,14 @@ public class UI extends PApplet
     {
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         //uiObjects.add(new MovingCircle(this, 0, width / 2, height * .75f, 25));
+        
         uiObjects.add(new Radar(this, 1, width / 2, height / 2, 100));
         uiObjects.add(new Target(this, width / 2, height/2));
         
         uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         noCursor();
+        
+        uiObjects.add(new Planets(this));
     }
 
     Radar radar;
