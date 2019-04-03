@@ -13,6 +13,10 @@ public class Planets extends UiObject {
     Random rand = new Random();
     int Pnum = rand.nextInt(7);
     int Snum = rand.nextInt(4);
+
+    int P_low = 20;
+    int P_high = 50;
+    int PSize = rand.nextInt(P_high-P_low) + P_low;
     
     public int fireRate;
 
@@ -32,7 +36,7 @@ public class Planets extends UiObject {
         
         ui.stroke(planetcolours[Pnum][0],planetcolours[Pnum][1],planetcolours[Pnum][2]);
         ui.noFill();
-        ui.line(400, 400, 10, 400);
+        ui.circle(400,400,PSize);
         
         ui.popMatrix();
     }
