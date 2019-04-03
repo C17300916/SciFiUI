@@ -7,16 +7,24 @@ public abstract class UiObject
     protected UI ui;
     protected float frequency;
     protected PVector pos;
+    protected PVector forward;
     protected float x,y,radius;
+    protected float speed;
+    protected float rotation;
+    
 
-    public UiObject(UI ui, float frequency, float x, float y, float radius)
+    public UiObject(UI ui, float frequency, float x, float y, float radius, float speed, float rotation)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
         pos = new PVector(x, y);
+        forward = new PVector(0, -1);
         this.radius = radius;
         this.frequency = frequency;
+        this.speed = speed;
+        this.rotation = rotation;
+
     }
 
     public abstract void update();
@@ -107,6 +115,34 @@ public abstract class UiObject
      */
     public void setRadius(float radius) {
         this.radius = radius;
+    }
+
+    /**
+     * @return the forward
+     */
+    public PVector getForward() {
+        return forward;
+    }
+
+    /**
+     * @param forward the forward to set
+     */
+    public void setForward(PVector forward) {
+        this.forward = forward;
+    }
+
+    /**
+     * @return the speed
+     */
+    public float getSpeed() {
+        return speed;
+    }
+
+    /**
+     * @param speed the speed to set
+     */
+    public void setSpeed(float speed) {
+        this.speed = speed;
     }
 
     

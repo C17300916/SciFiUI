@@ -1,7 +1,8 @@
 package ie.tudublin;
 
-import java.awt.*;
 import java.util.Random;
+
+import processing.core.PVector;
 
 public class Planets extends UiObject {
     int size = 50;
@@ -11,19 +12,31 @@ public class Planets extends UiObject {
 
 
     Random rand = new Random();
-    int Pnum = rand.nextInt(7);
+    int Pnum1 = rand.nextInt(7);
+    int Pnum2 = rand.nextInt(7);
     int Snum = rand.nextInt(4);
 
-    int P_low = 20;
-    int P_high = 50;
+    int P_low = 40;
+    int P_high = 70;
     int PSize = rand.nextInt(P_high-P_low) + P_low;
+    //spawn locationsleft
+    int XL = rand.nextInt(500);
+    //spawn locations right 
+    int XR_low = 700;
+    int XR_high = 1200;
+    int XR = rand.nextInt(XR_high- XR_low) + XR_low;
+
+    int Y_low = -100;
+    int Y_high = 50;
+    int Yco1 = rand.nextInt(Y_high- Y_low) + Y_low;
+    int Yco2 = rand.nextInt(Y_high- Y_low) + Y_low;
     
     public int fireRate;
 
 
-    public Planets(UI ui)
+    public Planets(UI ui, float x, float y, float rotation)
     {
-        super(ui, 0, 0, 0, 0);
+        super(ui, x, y, 0, 0, 5, rotation);
         
         
 
@@ -33,17 +46,25 @@ public class Planets extends UiObject {
     {
         ui.pushMatrix();
         
-        
-        ui.stroke(planetcolours[Pnum][0],planetcolours[Pnum][1],planetcolours[Pnum][2]);
-        ui.noFill();
-        ui.circle(400,400,PSize);
+        //planet left side
+        ui.stroke(planetcolours[Pnum1][0], planetcolours[Pnum1][1], planetcolours[Pnum1][2]);
+        ui.fill(planetcolours[Pnum1][0], planetcolours[Pnum1][1], planetcolours[Pnum1][2]);
+        ui.circle(XL,Yco1,PSize);
+        //planet right side
+        ui.stroke(planetcolours[Pnum2][0], planetcolours[Pnum2][1], planetcolours[Pnum2][2]);
+        ui.fill(planetcolours[Pnum2][0], planetcolours[Pnum2][1], planetcolours[Pnum2][2]);
+        ui.circle(XR,Yco2,PSize);
         
         ui.popMatrix();
     }
     
     public void update()
     {
-        
+        XR += 1.75;
+        XL -= 1.75;
+        Yco1 += 3;
+        Yco2 += 3;
+
     }
 
     

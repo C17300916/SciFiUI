@@ -11,7 +11,7 @@ public class Target extends UiObject
 
     public Target(UI ui, float x, float y)
     {
-        super(ui, x, y, 0, 0);
+        super(ui, x, y, 0, 0, 0, 0);
         
         
 

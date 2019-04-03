@@ -9,7 +9,7 @@ public class MovingCircle extends UiObject
 
     public MovingCircle(UI ui,float frequency, float x, float y, float radius)
     {
-       super(ui, frequency, x, y, radius);
+       super(ui, frequency, x, y, radius, 0, 0);
     }
     
     public void render()
