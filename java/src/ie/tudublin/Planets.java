@@ -20,9 +20,9 @@ public class Planets extends UiObject {
     int P_high = 70;
     int PSize = rand.nextInt(P_high-P_low) + P_low;
     //spawn locationsleft
-    int XL = rand.nextInt(500);
+    int XL = rand.nextInt(700);
     //spawn locations right 
-    int XR_low = 700;
+    int XR_low = 500;
     int XR_high = 1200;
     int XR = rand.nextInt(XR_high- XR_low) + XR_low;
 
@@ -57,13 +57,20 @@ public class Planets extends UiObject {
         
         ui.popMatrix();
     }
-    
+    private float spawned =0 ;
     public void update()
     {
         XR += 1.75;
         XL -= 1.75;
         Yco1 += 3;
         Yco2 += 3;
+
+
+        spawned += ui.time;
+        if (spawned >= 5.0)
+        {
+            ui.uiObjects.remove(this);
+        }
 
     }
 
