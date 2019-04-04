@@ -8,6 +8,7 @@ public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
+    float ellapsed=-1;
 
     boolean[] keys = new boolean[1024];
 
@@ -46,8 +47,11 @@ public class UI extends PApplet
         
         uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         noCursor();
+        if(ellapsed >= 5.0 || ellapsed == -1){
+            uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
+            ellapsed =0;
+        }
         
-        uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
     }
 
     Radar radar;
