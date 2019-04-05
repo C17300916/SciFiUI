@@ -46,19 +46,20 @@ public class Planets extends UiObject {
     int S_size3 = rand.nextInt(S_high- S_low) + S_low;
     int S_size4 = rand.nextInt(S_high- S_low) + S_low;
     //spawnpoints
-    int XS_low = 80;
+    int XS_low = -100;
     int XS_high = 900;
     int XSR_low = 300;
     int XSR_high = 1000;
-    int YS2_low = -200;
+    int YS2_low = -500;
     int YS2_high = -50;
     int Xs1 = rand.nextInt(XS_high- XS_low) + XS_low;
     int Xs2 = rand.nextInt(XSR_high- XSR_low) + XSR_low;
     int Xs3 = rand.nextInt(XS_high- XS_low) + XS_low;
     int Xs4 = rand.nextInt(XSR_high- XSR_low) + XSR_low;
-    int Yco3 = rand.nextInt(Y_high- Y_low) + Y_low;
-    int Yco4 = rand.nextInt(YS2_high- YS2_low) + YS2_low;
-
+    int Ys1 = rand.nextInt(Y_high- Y_low) + Y_low;
+    int Ys2 = rand.nextInt(YS2_high- YS2_low) + YS2_low;
+    int Ys3 = rand.nextInt(Y_high- Y_low) + Y_low;
+    int Ys4 = rand.nextInt(YS2_high- YS2_low) + YS2_low;
 
         
 
@@ -88,19 +89,21 @@ public class Planets extends UiObject {
         //DRAWING STARS
         ui.stroke(starcolours[Snum1][0], starcolours[Snum1][1], starcolours[Snum1][2]);
         ui.fill(starcolours[Snum1][0], starcolours[Snum1][1], starcolours[Snum1][2]);           
-        ui.circle(Xs1,Yco3,S_size1);
+        ui.circle(Xs1,Ys1,S_size1);
 
         ui.stroke(starcolours[Snum2][0], starcolours[Snum2][1], starcolours[Snum2][2]);
         ui.fill(starcolours[Snum2][0], starcolours[Snum2][1], starcolours[Snum2][2]);           
-        ui.circle(Xs2,Yco4,S_size2);
+        ui.circle(Xs2,Ys2,S_size2);
 
         ui.stroke(starcolours[Snum3][0], starcolours[Snum3][1], starcolours[Snum3][2]);
         ui.fill(starcolours[Snum3][0], starcolours[Snum3][1], starcolours[Snum3][2]);           
-        ui.circle(Xs3,Yco3,S_size3);
+        ui.circle(Xs3,Ys3,S_size3);
 
         ui.stroke(starcolours[Snum4][0], starcolours[Snum4][1], starcolours[Snum4][2]);
         ui.fill(starcolours[Snum4][0], starcolours[Snum4][1], starcolours[Snum4][2]);           
-        ui.circle(Xs4,Yco4,S_size4);
+        ui.circle(Xs4,Ys4,S_size4);
+
+        
 
         ui.popMatrix();
     }
@@ -114,14 +117,12 @@ public class Planets extends UiObject {
         Yco2 += 3;
 
         //star movement
-        Xs1 -= rand.nextFloat();
-        Xs2 += rand.nextFloat();
-        Xs3 -= rand.nextFloat();
-        Xs4 += rand.nextFloat();
-        Yco3 += 1;
-        Yco4 += 1;
+        Ys1 += 1;
+        Ys2 += 1;
+        Ys3 += 1;
+        Ys4 += 1;
 
-        
+        //checking if planets off page
         if( XR >= 1300 || Yco2 >=900){ 
             Pnum2 = rand.nextInt(7); 
             PSize2 = rand.nextInt(P_high-P_low) + P_low;
@@ -136,15 +137,31 @@ public class Planets extends UiObject {
             Yco1 = rand.nextInt(Y_high- Y_low) + Y_low;
         }
 
-        /*spawned += ui.time;
-        ui.ellapsed += ui.time;
-        if (spawned >= 5.0)
-        {
-            ui.uiObjects.remove(this);
-            
-            render();
-        }*/
-
+        //checking if stars off the page
+        if(  Ys1 >=850){ 
+            Snum1 = rand.nextInt(3); 
+            S_size1 = rand.nextInt(S_high- S_low) + S_low;
+            Xs1 = rand.nextInt(XS_high- XS_low) + XS_low;
+            Ys1 = rand.nextInt(Y_high- Y_low) + Y_low;
+        }
+        if( Ys2 >=850){
+            Snum2 = rand.nextInt(3); 
+            S_size2 = rand.nextInt(S_high- S_low) + S_low;
+            Xs2 = rand.nextInt(XSR_high- XSR_low) + XSR_low;
+            Ys2 = rand.nextInt(YS2_high- YS2_low) + YS2_low;
+        }
+        if( Ys3 >=850){
+            Snum3 = rand.nextInt(3);
+            S_size3 = rand.nextInt(S_high- S_low) + S_low;
+            Xs3 = rand.nextInt(XS_high- XS_low) + XS_low;
+            Ys3 = rand.nextInt(Y_high- Y_low) + Y_low;
+        }
+        if( Ys4 >=850){
+            Snum4 = rand.nextInt(3);
+            S_size4 = rand.nextInt(S_high- S_low) + S_low;
+            Xs4 = rand.nextInt(XSR_high- XSR_low) + XSR_low;
+            Ys4 = rand.nextInt(YS2_high- YS2_low) + YS2_low;
+        }
     }
 
     
