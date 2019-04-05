@@ -18,9 +18,8 @@ public class planetPractice extends UiObject {
     //picking a colour
     int Pnum1 = rand.nextInt(7);
     int Pnum2 = rand.nextInt(7);
-    //planet size
-    
-    float PSize1 = 0;
+    //planet size    
+    float PSize1 = -60;
     float PSize2 = 0;
 
     public planetPractice(UI ui, float x, float y)
@@ -42,15 +41,19 @@ public class planetPractice extends UiObject {
         
         //DRAWING PLANETS
          //planet left side
+        if(PSize1>0){
         ui.stroke(planetcolours[Pnum1][0], planetcolours[Pnum1][1], planetcolours[Pnum1][2]);
         ui.fill(planetcolours[Pnum1][0], planetcolours[Pnum1][1], planetcolours[Pnum1][2]);           
         ui.circle(P1x,P1y,PSize1);
+        }
         //planet right side
+        if(PSize2>0){
         ui.stroke(planetcolours[Pnum2][0], planetcolours[Pnum2][1], planetcolours[Pnum2][2]);
         ui.fill(planetcolours[Pnum2][0], planetcolours[Pnum2][1], planetcolours[Pnum2][2]);
         ui.circle(P2x,P2y,PSize2);
-
-       
+        }
+          
+            
         ui.popMatrix();
     }
     private float spawned =0 ;
@@ -58,9 +61,9 @@ public class planetPractice extends UiObject {
     {
         //planet movement
         PSize1 += rand.nextFloat();
-        PSize2 += .1;
-        P2x += 1;
-        P1x -= 1; 
+        PSize2 += rand.nextFloat();
+        P2x += rand.nextFloat();
+        P1x -= rand.nextFloat(); 
 
        
 
