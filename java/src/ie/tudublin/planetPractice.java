@@ -62,13 +62,24 @@ public class planetPractice extends UiObject {
         //planet movement
         PSize1 += rand.nextFloat();
         PSize2 += rand.nextFloat();
-        P2x += rand.nextFloat();
-        P1x -= rand.nextFloat(); 
+        if(PSize2>=0){P2x += 2;}
+        if(PSize1>=0){P1x -= 2;}
+ 
 
-       
-
-        
+        //resetting planets
+        if(P2x > 1300){
+            P2x = x;
+            PSize2 = 0;
+            Pnum2 = rand.nextInt(7);
+        }
+        if(P1x < -100){
+            P1x = x;
+            PSize1 = -60;
+            Pnum1 = rand.nextInt(7);
+        }
     }
 
-    
+        
 }
+
+    
