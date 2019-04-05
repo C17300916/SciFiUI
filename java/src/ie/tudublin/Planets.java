@@ -14,10 +14,9 @@ public class Planets extends UiObject {
 
     
     Random rand = new Random();
+    //PLANETS
     int Pnum1 = rand.nextInt(7);
     int Pnum2 = rand.nextInt(7);
-    int Snum = rand.nextInt(4);
-
     int P_low = 40;
     int P_high = 70;
     int PSize1 = rand.nextInt(P_high-P_low) + P_low;
@@ -33,7 +32,27 @@ public class Planets extends UiObject {
     int Y_high = 50;
     int Yco1 = rand.nextInt(Y_high- Y_low) + Y_low;
     int Yco2 = rand.nextInt(Y_high- Y_low) + Y_low;
-        
+    //STARS
+    //colours
+    int Snum1 = rand.nextInt(4);
+    int Snum2 = rand.nextInt(4);
+    int Snum3 = rand.nextInt(4);
+    int Snum4 = rand.nextInt(4);
+    //star size
+    int S_low = 5;
+    int S_high = 30;
+    int S_size1 = rand.nextInt(S_high- S_low) + S_low;
+    int S_size2 = rand.nextInt(S_high- S_low) + S_low;
+    int S_size3 = rand.nextInt(S_high- S_low) + S_low;
+    int S_size4 = rand.nextInt(S_high- S_low) + S_low;
+    //spawnpoints
+    int Xs1 = rand.nextInt(700);
+    int Xs2 = rand.nextInt(XR_high- XR_low) + XR_low;
+    int Xs3 = rand.nextInt(700);
+    int Xs4 = rand.nextInt(XR_high- XR_low) + XR_low;
+    int Yco3 = rand.nextInt(Y_high- Y_low) + Y_low;
+    int Yco4 = rand.nextInt(Y_high- Y_low) + Y_low;
+
 
         
 
@@ -50,7 +69,7 @@ public class Planets extends UiObject {
     {
         ui.pushMatrix();
         
-        
+        //DRAWING PLANETS
          //planet left side
         ui.stroke(planetcolours[Pnum1][0], planetcolours[Pnum1][1], planetcolours[Pnum1][2]);
         ui.fill(planetcolours[Pnum1][0], planetcolours[Pnum1][1], planetcolours[Pnum1][2]);           
@@ -59,6 +78,23 @@ public class Planets extends UiObject {
         ui.stroke(planetcolours[Pnum2][0], planetcolours[Pnum2][1], planetcolours[Pnum2][2]);
         ui.fill(planetcolours[Pnum2][0], planetcolours[Pnum2][1], planetcolours[Pnum2][2]);
         ui.circle(XR,Yco2,PSize2);
+
+        //DRAWING STARS
+        ui.stroke(planetcolours[Snum1][0], planetcolours[Snum1][1], planetcolours[Snum1][2]);
+        ui.fill(planetcolours[Snum1][0], planetcolours[Snum1][1], planetcolours[Snum1][2]);           
+        ui.circle(Xs1,Yco3,S_size1);
+
+        ui.stroke(planetcolours[Snum2][0], planetcolours[Snum2][1], planetcolours[Snum2][2]);
+        ui.fill(planetcolours[Snum2][0], planetcolours[Snum2][1], planetcolours[Snum2][2]);           
+        ui.circle(Xs2,Yco4,S_size2);
+
+        ui.stroke(planetcolours[Snum3][0], planetcolours[Snum3][1], planetcolours[Snum3][2]);
+        ui.fill(planetcolours[Snum3][0], planetcolours[Snum3][1], planetcolours[Snum3][2]);           
+        ui.circle(Xs3,Yco3,S_size3);
+
+        ui.stroke(planetcolours[Snum4][0], planetcolours[Snum4][1], planetcolours[Snum4][2]);
+        ui.fill(planetcolours[Snum4][0], planetcolours[Snum4][1], planetcolours[Snum4][2]);           
+        ui.circle(Xs4,Yco4,S_size4);
 
         ui.popMatrix();
     }
