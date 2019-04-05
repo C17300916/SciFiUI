@@ -34,10 +34,10 @@ public class Planets extends UiObject {
     int Yco2 = rand.nextInt(Y_high- Y_low) + Y_low;
     //STARS
     //colours
-    int Snum1 = rand.nextInt(4);
-    int Snum2 = rand.nextInt(4);
-    int Snum3 = rand.nextInt(4);
-    int Snum4 = rand.nextInt(4);
+    int Snum1 = rand.nextInt(3);
+    int Snum2 = rand.nextInt(3);
+    int Snum3 = rand.nextInt(3);
+    int Snum4 = rand.nextInt(3);
     //star size
     int S_low = 5;
     int S_high = 30;
@@ -46,12 +46,18 @@ public class Planets extends UiObject {
     int S_size3 = rand.nextInt(S_high- S_low) + S_low;
     int S_size4 = rand.nextInt(S_high- S_low) + S_low;
     //spawnpoints
-    int Xs1 = rand.nextInt(700);
-    int Xs2 = rand.nextInt(XR_high- XR_low) + XR_low;
-    int Xs3 = rand.nextInt(700);
-    int Xs4 = rand.nextInt(XR_high- XR_low) + XR_low;
+    int XS_low = 80;
+    int XS_high = 900;
+    int XSR_low = 300;
+    int XSR_high = 1000;
+    int YS2_low = -200;
+    int YS2_high = -50;
+    int Xs1 = rand.nextInt(XS_high- XS_low) + XS_low;
+    int Xs2 = rand.nextInt(XSR_high- XSR_low) + XSR_low;
+    int Xs3 = rand.nextInt(XS_high- XS_low) + XS_low;
+    int Xs4 = rand.nextInt(XSR_high- XSR_low) + XSR_low;
     int Yco3 = rand.nextInt(Y_high- Y_low) + Y_low;
-    int Yco4 = rand.nextInt(Y_high- Y_low) + Y_low;
+    int Yco4 = rand.nextInt(YS2_high- YS2_low) + YS2_low;
 
 
         
@@ -80,20 +86,20 @@ public class Planets extends UiObject {
         ui.circle(XR,Yco2,PSize2);
 
         //DRAWING STARS
-        ui.stroke(planetcolours[Snum1][0], planetcolours[Snum1][1], planetcolours[Snum1][2]);
-        ui.fill(planetcolours[Snum1][0], planetcolours[Snum1][1], planetcolours[Snum1][2]);           
+        ui.stroke(starcolours[Snum1][0], starcolours[Snum1][1], starcolours[Snum1][2]);
+        ui.fill(starcolours[Snum1][0], starcolours[Snum1][1], starcolours[Snum1][2]);           
         ui.circle(Xs1,Yco3,S_size1);
 
-        ui.stroke(planetcolours[Snum2][0], planetcolours[Snum2][1], planetcolours[Snum2][2]);
-        ui.fill(planetcolours[Snum2][0], planetcolours[Snum2][1], planetcolours[Snum2][2]);           
+        ui.stroke(starcolours[Snum2][0], starcolours[Snum2][1], starcolours[Snum2][2]);
+        ui.fill(starcolours[Snum2][0], starcolours[Snum2][1], starcolours[Snum2][2]);           
         ui.circle(Xs2,Yco4,S_size2);
 
-        ui.stroke(planetcolours[Snum3][0], planetcolours[Snum3][1], planetcolours[Snum3][2]);
-        ui.fill(planetcolours[Snum3][0], planetcolours[Snum3][1], planetcolours[Snum3][2]);           
+        ui.stroke(starcolours[Snum3][0], starcolours[Snum3][1], starcolours[Snum3][2]);
+        ui.fill(starcolours[Snum3][0], starcolours[Snum3][1], starcolours[Snum3][2]);           
         ui.circle(Xs3,Yco3,S_size3);
 
-        ui.stroke(planetcolours[Snum4][0], planetcolours[Snum4][1], planetcolours[Snum4][2]);
-        ui.fill(planetcolours[Snum4][0], planetcolours[Snum4][1], planetcolours[Snum4][2]);           
+        ui.stroke(starcolours[Snum4][0], starcolours[Snum4][1], starcolours[Snum4][2]);
+        ui.fill(starcolours[Snum4][0], starcolours[Snum4][1], starcolours[Snum4][2]);           
         ui.circle(Xs4,Yco4,S_size4);
 
         ui.popMatrix();
@@ -101,10 +107,19 @@ public class Planets extends UiObject {
     private float spawned =0 ;
     public void update()
     {
+        //planet movement
         XR += 1.75;
         XL -= 1.75;
         Yco1 += 3;
         Yco2 += 3;
+
+        //star movement
+        Xs1 -= rand.nextFloat();
+        Xs2 += rand.nextFloat();
+        Xs3 -= rand.nextFloat();
+        Xs4 += rand.nextFloat();
+        Yco3 += 1;
+        Yco4 += 1;
 
         
         if( XR >= 1300 || Yco2 >=900){ 
