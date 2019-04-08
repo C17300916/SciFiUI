@@ -31,9 +31,12 @@ public class planetPractice extends UiObject {
     //planets spawn points
     float P1x = x;
     float P2x = x;
-    float P1y = y;
-    float P2y = y;
+    float P1y = y + rand.nextInt(300);;
+    float P2y = y - rand.nextInt(300);;
     
+
+
+
     
     public void render()
     {
