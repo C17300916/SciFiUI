@@ -55,7 +55,7 @@ public class UI extends PApplet
 
     Radar radar;
 
-    public float time;
+    public float timeDelta;
     private float last;
 
     public void draw()
@@ -64,7 +64,7 @@ public class UI extends PApplet
         b.render();
 
         float now = millis();
-        time = (now - last) / 1000.0f;
+        timeDelta = (now - last) / 1000.0f;
         last = now;
 
         for(int i= uiObjects.size() - 1; i >= 0; i--)

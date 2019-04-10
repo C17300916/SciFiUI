@@ -2,14 +2,13 @@ package ie.tudublin;
 
 import java.util.Random;
 
-import processing.core.PVector;
+
 
 public class planetPractice extends UiObject {
     int size = 50;
     int[][] planetcolours = {{255,0,0},{0,255,0},{0,0,255},{255,0,127},
 {102,0,204},{0,255,128},{51,255,255},{102,0,0}};
-    int[][] starcolours = {{255,255,51},{255,255,0},{255,128,0},{153,153}};
-    int counterP =0 ;
+    
     
 
     
@@ -31,8 +30,8 @@ public class planetPractice extends UiObject {
     //planets spawn points
     float P1x = x;
     float P2x = x;
-    float P1y = y + rand.nextInt(300);;
-    float P2y = y - rand.nextInt(300);;
+    float P1y = y + rand.nextInt(300);
+    float P2y = y - rand.nextInt(300);
     
 
 
@@ -105,11 +104,13 @@ public class planetPractice extends UiObject {
             P2x = x;
             PSize2 = 0;
             Pnum2 = rand.nextInt(7);
+            P2y = y - rand.nextInt(300);
         }
         if(P1x < -100){
             P1x = x;
             PSize1 = -60;
             Pnum1 = rand.nextInt(7);
+            P1y = y + rand.nextInt(300);
         }
     }
 
