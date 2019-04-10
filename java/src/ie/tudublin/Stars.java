@@ -66,42 +66,71 @@ public class Stars extends UiObject {
         
         
         //star movement
-
-        if(S_Size1>=0){
-            
+        if(ui.checkKey(' ') && S_Size1>=0 ){
             if(S1y == y) {
-                S1x += .5;
+                S1x += 5;
             }
             if (S1y > y) {
-                S1x += .5;
-                S1y += .5;
+                S1x += 5;
+                S1y += .2;
 
             }
             if (S1y < y) {
-                S1x += .5;
-                S1y -= .5;
+                S1x += 5;
+                S1y -= .2;
 
             }
         }
-        if(S_Size2>=0){
+        else if(S_Size1>=0){
             
+            if(S1y == y) {
+                S1x += 1;
+            }
+            if (S1y > y) {
+                S1x += 1;
+                S1y += .2;
+
+            }
+            if (S1y < y) {
+                S1x += 1;
+                S1y -= .2;
+
+            }
+        }
+        if(ui.checkKey(' ') && S_Size2>=0 ){
             if(S2y == y) {
-                S2x -= .5;
+                S2x -= 5;
             }
             if (S2y > y) {
-                S2x -= .5;
-                S2y += .5;
+                S2x -= 5;
+                S2y += .2;
 
             }
             if (S2y < y) {
-                S2x -= .5;
-                S2y -= .5;
+                S2x -= 5;
+                S2y -= .2;
+
+            }
+        }
+        else if(S_Size2>=0){
+            
+            if(S2y == y) {
+                S2x -= 1;
+            }
+            if (S2y > y) {
+                S2x -= 1;
+                S2y += .2;
+
+            }
+            if (S2y < y) {
+                S2x -= 1;
+                S2y -= .2;
 
             }
         }
         
         spawned += ui.timeDelta;
-        if(spawned >= 10.0){
+        if(spawned >= 16.0){
             ui.uiObjects.remove(this);
         }
     }

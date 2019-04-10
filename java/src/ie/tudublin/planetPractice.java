@@ -66,7 +66,22 @@ public class planetPractice extends UiObject {
         PSize2 += rand.nextFloat();
 
         //planet1
-        if(PSize1>=0){
+        if(ui.checkKey(' ') && PSize1>=0 ){
+            if(P1y == y){
+                P1x -= 4;
+            }
+            if(P1y > y){
+                P1x -= 4;
+                P1y += .5;
+
+            }
+            if(P1y < y){
+                P1x -= 4;
+                P1y -= .5;
+
+            }
+        }
+        else if(PSize1>=0 ){
             if(P1y == y){
                 P1x -= 2;
             }
@@ -81,7 +96,22 @@ public class planetPractice extends UiObject {
 
             }
         }
-        if(PSize2>=0){
+        if(ui.checkKey(' ') && PSize1>=0 ){
+            if(P2y == y){
+                P2x += 4;
+            }
+            if(P2y > y){
+                P2x += 4;
+                P2y += .5;
+
+            }
+            if(P2y < y){
+                P2x += 4;
+                P2y -= .5;
+
+            }
+        }
+        else if(PSize2>=0){
             if(P2y == y){
                 P2x += 2;
             }

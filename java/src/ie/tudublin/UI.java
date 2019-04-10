@@ -72,7 +72,7 @@ public class UI extends PApplet
         last = now;
 
         timer += timeDelta;
-        if(timer > 2.0){
+        if(timer > 1.0){
             Stars s = new Stars(this, width / 2, height / 2);
             uiObjects.add(s);
             timer = 0;
