@@ -42,7 +42,12 @@ public class Fuel extends UiObject
     {
         if (ui.checkKey('w') )
         {
-            y2 =y2 + 0.1f;
+            if(ui.checkKey(' ')){
+                y2 =y2 + 0.5f;
+            }
+            else{
+                y2 =y2 + 0.1f;
+            }
         }
         
         
