@@ -8,6 +8,8 @@ public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
+    float timer;
+    Stars s;
     
 
     boolean[] keys = new boolean[1024];
@@ -48,9 +50,10 @@ public class UI extends PApplet
         uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         noCursor();
         
-        uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
+        //uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
         uiObjects.add(new planetPractice(this, width / 2, height / 2));
-        uiObjects.add(new Stars(this, width / 2, height / 2));
+        //every 2 seconds add a star
+       
         
     }
 
@@ -67,6 +70,16 @@ public class UI extends PApplet
         float now = millis();
         timeDelta = (now - last) / 1000.0f;
         last = now;
+
+        timer += timeDelta;
+        if(timer > 2.0){
+            Stars s = new Stars(this, width / 2, height / 2);
+            uiObjects.add(s);
+            timer = 0;
+            
+        }
+
+        //text("Ellapsed: "+ timer, 10, 200);
 
         for(int i= uiObjects.size() - 1; i >= 0; i--)
         {
