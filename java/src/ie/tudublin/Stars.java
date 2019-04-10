@@ -78,10 +78,101 @@ public class Stars extends UiObject {
     
     public void update()
     {
-       spawned += ui.timeDelta;
-       if(spawned >= 3.0){
+        
+        S_Size += .1f;
+
+        //star movement
+        if(S_Size>=0){
+            //star 1
+            if(S1y == y) {
+                S1x += 2;
+            }
+            if (S1y > y) {
+                S1x += 2;
+                S1y += .5;
+
+            }
+            if (S1y < y) {
+                S1x += 2;
+                S1y -= .5;
+
+            }
+            //star 2
+            if(S2y == y) {
+                S2x -= 2;
+            }
+            if (S2y > y) {
+                S2x -= 2;
+                S2y += .5;
+
+            }
+            if (S2y < y) {
+                S2x -= 2;
+                S1y -= .5;
+
+            }
+            //star 3
+            if(S3y == y) {
+                S1x += 2;
+            }
+            if (S3y > y) {
+                S3x += 2;
+                S3y += .5;
+
+            }
+            if (S3y < y) {
+                S3x += 2;
+                S3y -= .5;
+
+            }
+            //star 4
+            if(S4y == y) {
+                S4x -= 2;
+            }
+            if (S4y > y) {
+                S4x -= 2;
+                S4y += .5;
+
+            }
+            if (S4y < y) {
+                S4x -= 2;
+                S4y -= .5;
+
+            }
+            //star 5
+            if(S5y == y) {
+                S5x += 2;
+            }
+            if (S5y > y) {
+                S5x += 2;
+                S5y += .5;
+
+            }
+            if (S5y < y) {
+                S5x += 2;
+                S5y -= .5;
+
+            }
+            //star 6
+            if(S6y == y) {
+                S6x -= 2;
+            }
+            if (S6y > y) {
+                S6x -= 2;
+                S6y += .5;
+
+            }
+            if (S6y < y) {
+                S6x -= 2;
+                S6y -= .5;
+
+            }
+            
+        }
+        spawned += ui.timeDelta;
+        if(spawned >= 3.0){
            render();
-       }
+        }
     }
     float spawned;
         

@@ -50,6 +50,7 @@ public class UI extends PApplet
         
         uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
         uiObjects.add(new planetPractice(this, width / 2, height / 2));
+        uiObjects.add(new Stars(this, width / 2, height / 2));
         
     }
 
