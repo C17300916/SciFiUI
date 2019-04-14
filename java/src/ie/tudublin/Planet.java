@@ -4,10 +4,10 @@ import java.util.Random;
 
 
 
-public class planetPractice extends UiObject {
+public class Planet extends UiObject {
     int size = 50;
     int[][] planetcolours = {{255,0,0},{0,255,0},{0,0,255},{255,0,127},
-{102,0,204},{0,255,128},{51,255,255},{102,0,0}};
+    {102,0,204},{0,255,128},{51,255,255},{102,0,0}};
     
     
 
@@ -21,7 +21,7 @@ public class planetPractice extends UiObject {
     float PSize1 = -60;
     float PSize2 = 0;
 
-    public planetPractice(UI ui, float x, float y)
+    public Planet(UI ui, float x, float y)
     {
         super(ui, 0, x, y, 0, 5, 0);
         
@@ -58,7 +58,7 @@ public class planetPractice extends UiObject {
             
         ui.popMatrix();
     }
-    private float spawned =0 ;
+    
     public void update()
     {
         //planet movement

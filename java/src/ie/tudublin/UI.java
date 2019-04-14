@@ -34,9 +34,9 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1200, 800);
+        //size(1200, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(P3D); 
+        fullScreen(); 
     }
 
     public void setup()
@@ -51,7 +51,7 @@ public class UI extends PApplet
         noCursor();
         
         //uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
-        uiObjects.add(new planetPractice(this, width / 2, height / 2));
+        uiObjects.add(new Planet(this, width / 2, height / 2));
         //every 2 seconds add a star
        
         
