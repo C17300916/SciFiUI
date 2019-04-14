@@ -127,22 +127,15 @@ public class Planet extends UiObject {
             }
         }
         
- 
-
-        //resetting planets
-        if(P2x > 1300){
-            P2x = x;
-            PSize2 = 0;
-            Pnum2 = rand.nextInt(7);
-            P2y = y - rand.nextInt(300);
+        spawned += ui.timeDelta;
+        if(spawned >= 16.0){
+            ui.uiObjects.remove(this);
         }
-        if(P1x < -100){
-            P1x = x;
-            PSize1 = -60;
-            Pnum1 = rand.nextInt(7);
-            P1y = y + rand.nextInt(300);
-        }
+    
+    
+        
     }
+    float spawned;
 
         
 }

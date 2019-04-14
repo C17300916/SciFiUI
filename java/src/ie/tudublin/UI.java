@@ -8,7 +8,7 @@ public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
-    float timer;
+    float timer1, timer2;
     Stars s;
     
 
@@ -51,8 +51,8 @@ public class UI extends PApplet
         noCursor();
         
         //uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
-        uiObjects.add(new Planet(this, width / 2, height / 2));
-        //every 2 seconds add a star
+       // uiObjects.add(new Planet(this, width / 2, height / 2));
+        
        
         
     }
@@ -71,13 +71,21 @@ public class UI extends PApplet
         timeDelta = (now - last) / 1000.0f;
         last = now;
 
-        timer += timeDelta;
-        if(timer > 1.0){
+        timer1 += timeDelta;
+        if(timer1 > 1.0){
             Stars s = new Stars(this, width / 2, height / 2);
             uiObjects.add(s);
-            timer = 0;
+            timer1 = 0;
             
         }
+        timer2 += timeDelta;
+        if(timer2 > 14.0){
+            Planet p = new Planet(this, width / 2, height / 2);
+            uiObjects.add(p);
+            timer2 = 0;
+            
+        }
+
 
         //text("Ellapsed: "+ timer, 10, 200);
 
