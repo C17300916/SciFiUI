@@ -41,6 +41,8 @@ public class UI extends PApplet
 
     public void setup()
     {
+        uiObjects.add(new Helmet(this, width, height));
+
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         uiObjects.add(new MovingCircle(this, 0, width / 2, height * .75f, 25));
         
@@ -49,6 +51,7 @@ public class UI extends PApplet
         
         uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         noCursor();
+        
         
         //uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
        // uiObjects.add(new Planet(this, width / 2, height / 2));
