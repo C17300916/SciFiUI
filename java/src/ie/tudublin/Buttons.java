@@ -15,7 +15,7 @@ public class Buttons extends UiObject
     {
         //button 1
         if(ui.mouseX >= x- h && ui.mouseX <= x-h + w ){
-            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
+            if(ui.mouseY >= y-h && ui.mouseY <= y){
                 ui.fill(121,144,220);
             }
             else{
@@ -36,7 +36,7 @@ public class Buttons extends UiObject
 
         //button 2
         if(ui.mouseX >= (x*2 + x/2) && ui.mouseX <= (x*2 + x/2) + w ){
-            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
+            if(ui.mouseY >= y-h && ui.mouseY <= y){
                 ui.fill(121,144,220);
             }
             else{
@@ -55,7 +55,7 @@ public class Buttons extends UiObject
 
         //button 3
         if(ui.mouseX >= x-h && ui.mouseX <= (x-h) + w ){
-            if(ui.mouseY >= y+h && ui.mouseY <= y+h + h){
+            if(ui.mouseY >= y+h && ui.mouseY <= y+h*2){
                 ui.fill(121,144,220);
             }
             else{
@@ -74,7 +74,7 @@ public class Buttons extends UiObject
 
         //button 4
         if(ui.mouseX >= (x*2 + x/2) && ui.mouseX <= (x*2 + x/2) + w ){
-            if(ui.mouseY >= y+h && ui.mouseY <= (y+h) + h){
+            if(ui.mouseY >= y+h && ui.mouseY <= y + h*2){
                 ui.fill(121,144,220);
             }
             else{
@@ -96,33 +96,4 @@ public class Buttons extends UiObject
         
     }
     
-    public void mousePressed(){
-
-        //if clicking first button
-        if(ui.mouseX >= x- h && ui.mouseX <= x-h + w ){
-            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
-                
-            }
-        }
-        //if clicking second button
-        if(ui.mouseX >= (x*2 + x/2) && ui.mouseX <= (x*2 + x/2) + w ){
-            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
-                
-            }
-        }
-        //if clicking third button
-        if(ui.mouseX >= x-h && ui.mouseX <= (x-h) + w ){
-            if(ui.mouseY >= y+h && ui.mouseY <= y+h + h){
-                
-            }
-        }
-
-        //if clicking fourth button
-        if(ui.mouseX >= (x*2 + x/2) && ui.mouseX <= (x*2 + x/2) + w ){
-            if(ui.mouseY >= y+h && ui.mouseY <= (y+h) + h){
-                
-            }
-        }
-
-    }
 }
