@@ -94,8 +94,35 @@ public class Buttons extends UiObject
 
     public void update(){
         
-
-
     }
     
+    public void mousePressed(){
+
+        //if clicking first button
+        if(ui.mouseX >= x- h && ui.mouseX <= x-h + w ){
+            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
+                
+            }
+        }
+        //if clicking second button
+        if(ui.mouseX >= (x*2 + x/2) && ui.mouseX <= (x*2 + x/2) + w ){
+            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
+                
+            }
+        }
+        //if clicking third button
+        if(ui.mouseX >= x-h && ui.mouseX <= (x-h) + w ){
+            if(ui.mouseY >= y+h && ui.mouseY <= y+h + h){
+                
+            }
+        }
+
+        //if clicking fourth button
+        if(ui.mouseX >= (x*2 + x/2) && ui.mouseX <= (x*2 + x/2) + w ){
+            if(ui.mouseY >= y+h && ui.mouseY <= (y+h) + h){
+                
+            }
+        }
+
+    }
 }
