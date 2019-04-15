@@ -73,26 +73,31 @@ public class UI extends PApplet
         //if clicking first button
         if(mouseX >= butX - butH &&  mouseX <= butX - butH + butW ){
             if(mouseY >= butY - butH && mouseY <= butY){
-                System.out.println("button 1 clicked" );
+                
+                Health h = new Health(this, width / 2, height / 2);
+                uiObjects.add(h);
             }
         }
         //if clicking second button
         if(mouseX >= (butX*2 + butX/2) && mouseX <= (butX*2 + butX/2) + butW ){
             if(mouseY >= butY-butH && mouseY <= butY){
-                System.out.println("button 2 clicked" );
+                Map m = new Map(this, width / 2, height / 2);
+                uiObjects.add(m);
             }
         }
         //if clicking third button
         if(mouseX >= butX-butH && mouseX <= (butX-butH) + butW ){
             if(mouseY >= butY+butH && mouseY <= butY + butH*2){
-                System.out.println("button 3 clicked" );
+                Ammo a = new Ammo(this, width / 2, height / 2);
+                uiObjects.add(a);
             }
         }
 
         //if clicking fourth button
         if(mouseX >= (butX*2 + butX/2) && mouseX <= (butX*2 + butX/2) + butW ){
             if(mouseY >= butY+butH && mouseY <= butY+butH*2){
-                System.out.println("button 4 clicked" );
+                Distance d = new Distance(this, width / 2, height / 2);
+                uiObjects.add(d);
             }
         }
         
