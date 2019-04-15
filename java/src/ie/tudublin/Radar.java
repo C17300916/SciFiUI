@@ -20,6 +20,9 @@ public class Radar extends UiObject
         ui.fill(233,161,161);
         ui.stroke(255,0,0);
         ui.ellipse(pos.x, pos.y, radius * 2, radius * 2);
+        ui.ellipse(pos.x, pos.y, radius *1.5f, radius * 1.5f);
+        ui.ellipse(pos.x, pos.y, radius, radius);
+        ui.ellipse(pos.x, pos.y, radius /2, radius / 2);
         float x2 = pos.x + (float) Math.sin(theta) * radius;
         float y2 = pos.y - (float) Math.cos(theta) * radius;
         ui.line(pos.x, pos.y, x2, y2);
