@@ -14,7 +14,15 @@ public class Buttons extends UiObject
     public void render()
     {
         //button 1
-        ui.fill(121,144,220);
+        if(ui.mouseX >= x- h && ui.mouseX <= x-h + w ){
+            if(ui.mouseY >= y-h && ui.mouseY <= y-h + h){
+                ui.fill(121,144,220);
+            }
+        }
+        else{
+            ui.fill(255,51,255);
+        }
+        
         ui.stroke(0);
         ui.rectMode(PApplet.CORNER);
         ui.rect(x-h, y-h, w, h);
@@ -49,6 +57,7 @@ public class Buttons extends UiObject
     }
 
     public void update(){
+
 
     }
 }
