@@ -19,7 +19,7 @@ public class Helmet extends UiObject
     {
         ui.beginShape();
         ui.stroke(255);
-        ui.fill(255);
+        ui.fill(0,250,154);
         //ui.noFill();
         
         //outside shape

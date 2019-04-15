@@ -6,7 +6,6 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Button b;
     MovingCircle mc;
     float timer1, timer2;
     Stars s;
@@ -41,17 +40,14 @@ public class UI extends PApplet
 
     public void setup()
     {
-        uiObjects.add(new Radar(this, 1, width / 2, height / 2, 100));
+        uiObjects.add(new Buttons(this, width/4, height - height/ 6));
+        uiObjects.add(new Radar(this, 1, width/10, height - height / 7, 100));
         uiObjects.add(new Target(this, width / 2, height/2));
         uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         uiObjects.add(new Helmet(this, width, height));
 
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
+       
         uiObjects.add(new MovingCircle(this, 0, width / 2, height * .75f, 25));
-        
-        
-        
-        
         
         noCursor();
         
@@ -71,7 +67,6 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        b.render();
 
         float now = millis();
         timeDelta = (now - last) / 1000.0f;
