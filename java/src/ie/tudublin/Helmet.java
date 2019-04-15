@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PConstants;
+
 
 public class Helmet extends UiObject
 {
