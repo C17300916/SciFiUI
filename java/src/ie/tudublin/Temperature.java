@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import processing.core.PApplet;
 
 public class Temperature extends UiObject
 {
@@ -10,6 +11,13 @@ public class Temperature extends UiObject
 
     public void render()
     {
+        ui.beginShape();
+        ui.noFill();
+        ui.line(5, y, 20, y);
+        ui.arc(80, y, 150, 150, PApplet.PI, PApplet.TWO_PI);
+        ui.arc(80, y, 120, 120, PApplet.PI, PApplet.TWO_PI);
+        ui.line(155, y, 140, y);
+        ui.endShape();
     }
 
 	public void update() {

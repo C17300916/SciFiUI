@@ -43,18 +43,6 @@ public class Helmet extends UiObject
         ui.vertex(gap, y - gap*2);
         ui.vertex(gap, gap);
         ui.endContour();
-        /*ui.line(gap, gap, gap, y - gap*2);
-        ui.line(gap, y - gap*2, gap*2, y- (gap + gap/2));
-        ui.line(gap*2, y- (gap + gap/2), halfW - gap , y- (gap + gap/2));
-        ui.line(halfW - gap , y- (gap + gap/2), halfW - gap/2, y- gap*2);
-        ui.line(halfW - gap/2, y- gap*2, halfW + gap/2, y- gap*2);
-        ui.line(halfW + gap/2, y- gap*2, halfW + gap, y- (gap + gap/2));
-        ui.line(halfW + gap, y- (gap + gap/2), x- gap*2,  y- (gap + gap/2));
-        ui.line(x- gap*2,  y- (gap + gap/2), x- gap, y - gap*2);
-        ui.line(x- gap, y - gap*2, x- gap, gap);
-        ui.line(x- gap, gap, halfW, gap/2);
-        ui.line(halfW, gap/2, gap, gap);
-        */
 
 
         ui.endShape();
