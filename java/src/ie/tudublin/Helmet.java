@@ -12,7 +12,7 @@ public class Helmet extends UiObject
         super(ui, 0, x, y, 0, 0, 0);
     }
 
-    float gap = x / 10f;
+    float gap = x / 8f;
     float halfW = x/2;
     float halfH = y/2;
     public void render()
