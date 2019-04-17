@@ -10,6 +10,7 @@ public class Boost extends UiObject
 
     float size1 = 140;
     float size2 = 110;
+    float booster = ui.PI + 0.01f;
     float timer =0;
 
     public void render()
@@ -20,9 +21,11 @@ public class Boost extends UiObject
         //back ellispse
         ui.ellipse(x, y, size1, size1);
 
+        ui.beginShape();
         //boost going up 
         ui.fill(218,165,32);
-        ui.arc(x, y, size1, size1, ui.PI, ui.TWO_PI);
+        ui.arc(x, y, size1, size1, ui.PI, booster);
+        ui.endShape();
 
         //inner ellipse
         ui.fill(255,0,0);
@@ -30,8 +33,12 @@ public class Boost extends UiObject
 
         //boos
     }
-
 	public void update() {
+        //booster goes up slowly
+        if(booster < booster + ui.TWO_PI){
+            booster += 0.006f;
+        }
+        
 		
     }
 }
