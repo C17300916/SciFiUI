@@ -13,10 +13,16 @@ public class Temperature extends UiObject
     {
         ui.beginShape();
         ui.noFill();
-        ui.line(5, y, 20, y);
+        /*ui.line(5, y, 20, y);
         ui.arc(80, y, 150, 150, PApplet.PI, PApplet.TWO_PI);
         ui.arc(80, y, 120, 120, PApplet.PI, PApplet.TWO_PI);
         ui.line(155, y, 140, y);
+        */
+        ui.vertex(5, y);
+        ui.bezierVertex(5, y, 80, y-150, 155, y);
+        ui.vertex(140, y);
+        ui.bezierVertex(140, y, 80, y-120, 20, y);
+        ui.vertex(5, y);
         ui.endShape();
     }
 
