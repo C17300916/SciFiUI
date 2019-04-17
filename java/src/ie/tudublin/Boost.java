@@ -23,7 +23,7 @@ public class Boost extends UiObject
 
         ui.beginShape();
         //boost going up 
-        ui.fill(218,165,32);
+        ui.fill(255,255,0);
         ui.arc(x, y, size1, size1, ui.PI, booster);
         ui.endShape();
 
@@ -31,11 +31,17 @@ public class Boost extends UiObject
         ui.fill(255,0,0);
         ui.ellipse(x, y, size2, size2);
 
-        //boos
+        //checking if booster is full
+        ui.fill(0);
+        ui.textSize(15);
+        if(booster > ui.PI + ui.TWO_PI){
+            
+            ui.text("BOOST READY", x, y);
+        }
     }
 	public void update() {
         //booster goes up slowly
-        if(booster < booster + ui.TWO_PI){
+        if(booster < ui.PI + 0.01f + ui.TWO_PI){
             booster += 0.006f;
         }
         
