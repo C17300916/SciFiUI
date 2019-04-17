@@ -12,7 +12,8 @@ public class Helmet extends UiObject
         super(ui, 0, x, y, 0, 0, 0);
     }
 
-    float gap = x / 8f;
+    float gap1 = x / 10f;
+    float gap2 = x / 8f;
     float halfW = x/2;
     float halfH = y/2;
     public void render()
@@ -30,18 +31,18 @@ public class Helmet extends UiObject
 
         //inside shape
         ui.beginContour();
-        ui.vertex(gap, gap);
-        ui.vertex(halfW, gap/2);
-        ui.vertex(x- gap, gap);
-        ui.vertex(x- gap, y - gap*2);
-        ui.vertex(x- gap*2,  y- (gap + gap/2));
-        ui.vertex(halfW + gap, y- (gap + gap/2));
-        ui.vertex(halfW + gap/2, y- gap*2);
-        ui.vertex(halfW - gap/2, y- gap*2);
-        ui.vertex(halfW - gap , y- (gap + gap/2));
-        ui.vertex(gap*2, y- (gap + gap/2));
-        ui.vertex(gap, y - gap*2);
-        ui.vertex(gap, gap);
+        ui.vertex(gap2, gap1);
+        ui.vertex(halfW, gap1/2);
+        ui.vertex(x- gap2, gap1);
+        ui.vertex(x- gap2, y - gap1*2);
+        ui.vertex(x- gap2*2,  y- (gap1 + gap1/2));
+        ui.vertex(halfW + gap2, y- (gap1 + gap1/2));
+        ui.vertex(halfW + gap2/2, y- gap1*2);
+        ui.vertex(halfW - gap2/2, y- gap1*2);
+        ui.vertex(halfW - gap2 , y- (gap1 + gap1/2));
+        ui.vertex(gap2*2, y- (gap1 + gap1/2));
+        ui.vertex(gap2, y - gap1*2);
+        ui.vertex(gap2, gap1);
         ui.endContour();
 
 
