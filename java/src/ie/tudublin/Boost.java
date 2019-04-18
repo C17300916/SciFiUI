@@ -11,11 +11,11 @@ public class Boost extends UiObject
     float size1 = 140;
     float size2 = 110;
     float booster = ui.PI + 0.01f;
-    float timer =0;
+    
 
     public void render()
     {
-        timer += ui.timeDelta;
+        
         ui.stroke(255);
 
         //back ellispse

@@ -117,19 +117,39 @@ public class UI extends PApplet
         last = now;
 
         timer1 += timeDelta;
-        if(timer1 > 1.0){
-            Stars s = new Stars(this, width / 2, height / 2);
-            uiObjects.add(s);
-            timer1 = 0;
+        if(timer1 > .5){
+            if(checkKey('w')){
+
+                Stars s = new Stars(this, width / 2, height / 2, 5);
+                uiObjects.add(s);
+                timer1 = 0;
+            }
+            else{
+                Stars r = new Stars(this, width / 2, height / 2, 1);
+                uiObjects.add(r);
+                timer1 = 0;
+            }
             
         }
         timer2 += timeDelta;
-        if(timer2 > 14.0){
-            Planet p = new Planet(this, width / 2, height / 2);
-            uiObjects.add(p);
-            timer2 = 0;
+        
+            if (checkKey(' '))
+            {   
+                if(timer2 > 14.0){
+                Planet p = new Planet(this, width / 2, height / 2, 5);
+                uiObjects.add(p);
+                timer2 = 0;
+                }
+            }
+            else{
+                if(timer2 > 14.0){
+                Planet p = new Planet(this, width / 2, height / 2, 1);
+                uiObjects.add(p);
+                timer2 = 0;
+                }
+            }
             
-        }
+        
 
 
         //text("Ellapsed: "+ timer, 10, 200);

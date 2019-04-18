@@ -21,9 +21,9 @@ public class Planet extends UiObject {
     float PSize1 = -60;
     float PSize2 = 0;
 
-    public Planet(UI ui, float x, float y)
+    public Planet(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, 5, 0);
+        super(ui, 0, x, y, 0, speed, 0);
         
     }
 

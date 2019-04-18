@@ -13,9 +13,9 @@ public class Stars extends UiObject {
     
     
 
-    public Stars(UI ui, float x, float y)
+    public Stars(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, 5, 0);
+        super(ui, 0, x, y, 0, speed, 0);
         
     }
 
@@ -48,6 +48,8 @@ public class Stars extends UiObject {
         ui.popMatrix();
     }
     
+    float speedY = .2f;
+    
     public void update()
     {
         //sizing each star
@@ -66,75 +68,48 @@ public class Stars extends UiObject {
         
         
         //star movement
-        if(ui.checkKey(' ') && S_Size1>=0 ){
+        if(S_Size1>=0){
+            
             if(S1y == y) {
-                S1x += 5;
+                S1x += speed;
             }
             if (S1y > y) {
-                S1x += 5;
-                S1y += .2;
+                S1x += speed;
+                S1y += speedY;
 
             }
             if (S1y < y) {
-                S1x += 5;
-                S1y -= .2;
-
-            }
-        }
-        else if(S_Size1>=0){
-            
-            if(S1y == y) {
-                S1x += 1;
-            }
-            if (S1y > y) {
-                S1x += 1;
-                S1y += .2;
-
-            }
-            if (S1y < y) {
-                S1x += 1;
-                S1y -= .2;
-
-            }
-        }
-        if(ui.checkKey(' ') && S_Size2>=0 ){
-            if(S2y == y) {
-                S2x -= 5;
-            }
-            if (S2y > y) {
-                S2x -= 5;
-                S2y += .2;
-
-            }
-            if (S2y < y) {
-                S2x -= 5;
-                S2y -= .2;
-
-            }
-        }
-        else if(S_Size2>=0){
-            
-            if(S2y == y) {
-                S2x -= 1;
-            }
-            if (S2y > y) {
-                S2x -= 1;
-                S2y += .2;
-
-            }
-            if (S2y < y) {
-                S2x -= 1;
-                S2y -= .2;
+                S1x += speed;
+                S1y -= speedY;
 
             }
         }
         
+        if(S_Size2>=0){
+            
+            if(S2y == y) {
+                S2x -= speed;
+            }
+            if (S2y > y) {
+                S2x -= speed;
+                S2y += speedY;
+
+            }
+            if (S2y < y) {
+                S2x -= speed;
+                S2y -= speedY;
+
+            }
+        }
+        
+
         spawned += ui.timeDelta;
         if(spawned >= 16.0){
             ui.uiObjects.remove(this);
         }
     }
     float spawned;
+    float booster;
         
 }
 
