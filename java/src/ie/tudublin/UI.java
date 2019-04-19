@@ -40,11 +40,12 @@ public class UI extends PApplet
 
     public void setup()
     {
+        
+        uiObjects.add(new Target(this, width / 2, height/2));
         uiObjects.add(new Buttons(this, width/4, height - height/ 6));
         uiObjects.add(new Temperature(this, 80, height / 2));
         uiObjects.add(new Boost(this, 80, height / 4));
         uiObjects.add(new Radar(this, 1, width/10, height - height / 7, 100));
-        uiObjects.add(new Target(this, width / 2, height/2));
         uiObjects.add(new Fuel(this, 1, width -50, height - 300));
         uiObjects.add(new Helmet(this, width, height));
 
@@ -78,6 +79,7 @@ public class UI extends PApplet
                 
                 Health h = new Health(this, width / 2, height / 2);
                 uiObjects.add(h);
+                
             }
         }
         //if clicking second button

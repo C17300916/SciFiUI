@@ -44,7 +44,14 @@ public class Boost extends UiObject
         if(booster < ui.PI + 0.01f + ui.TWO_PI){
             booster += 0.006f;
         }
-        
-		
+
+        //resetting booster once its been used
+        if(booster > ui.PI + ui.TWO_PI){
+            if(ui.checkKey(' ')){
+                booster = ui.PI;
+            }
+        }
     }
+
+    
 }
