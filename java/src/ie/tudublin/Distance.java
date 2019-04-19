@@ -23,21 +23,23 @@ public class Distance extends UiObject
         ui.stroke(255);
         ui.noFill();
         ui.rect(x, y, w, h);
-        for(int i=0; i< gap; i++){
-            ui.line(startPoint, prevY, nextPoint, varY);
-            startPoint = nextPoint;
-            prevY = varY;
-            nextPoint += gap;
-            if(varY == y){
-                varY += (h/2 + gap) + rand.nextFloat()*((-(h/2 - gap)) - (h/2 + gap));
-            }
-            if(varY > y){
-                varY -= (-(h/2 - gap)) + rand.nextFloat()*((varY) - (-(h/2 - gap)));
-            }
-            if(varY < y){
-                varY += (varY) + rand.nextFloat()*((h/2 + gap) - (varY));
-            }
+        while(nextPoint < x + w/2){
+            for(int i=0; i< gap; i++){
+                ui.line(startPoint, prevY, nextPoint, varY);
+                startPoint = nextPoint;
+                prevY = varY;
+                nextPoint += 2;
+                if(varY == y){
+                    varY += (h/2 + gap) + rand.nextFloat()*((-(h/2 - gap)) - (h/2 + gap));
+                }
+                if(varY > y){
+                    varY -= rand.nextInt((int)(h/2 - gap));
+                }
+                if(varY < y){
+                    varY += rand.nextInt((int)(h/2 - gap));
+                }
 
+            }
         }
         
         
