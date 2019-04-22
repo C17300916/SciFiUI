@@ -22,7 +22,7 @@ public class UI extends PApplet
     
     public void keyReleased()
     {
-        keys[keyCode] = true;
+        keys[keyCode] = false;
     }
 
     public boolean checkKey(int c)
@@ -66,7 +66,7 @@ public class UI extends PApplet
 
     public float timeDelta;
     private float last;
-    public void mouseClicked(){
+    public void mousePressed(){
         float butY = height - height/ 6 ;
         float butX = width/4;
         float butW = 230;

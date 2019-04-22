@@ -40,18 +40,16 @@ public class Fuel extends UiObject
 
     public void update()
     {
-        if (ui.checkKey('w') )
-        {
-            if(ui.checkKey(' ')){
-                y2 =y2 + 0.5f;
-            }
-            else{
-                y2 =y2 + 0.1f;
-            }
+        
+        if(ui.checkKey(' ')){
+            y2 =y2 + 0.5f;
         }
-        
-        
+        else{
+            y2 =y2 + 0.1f;
+        }
     }
+        
+        
+}
 
     
-}

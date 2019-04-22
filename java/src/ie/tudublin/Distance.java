@@ -23,7 +23,8 @@ public class Distance extends UiObject
         ui.stroke(255);
         ui.noFill();
         ui.rect(x, y, w, h);
-        while(nextPoint < x + w/2){
+        
+        //disatance graph
             for(int i=0; i< gap; i++){
                 ui.line(startPoint, prevY, nextPoint, varY);
                 startPoint = nextPoint;
@@ -40,7 +41,7 @@ public class Distance extends UiObject
                 }
 
             }
-        }
+        
         
         
 
@@ -49,11 +50,12 @@ public class Distance extends UiObject
 
     @Override
     public void render() {
-        spawned += ui.timeDelta;
-        if(spawned >= 16.0){
-            ui.uiObjects.remove(this);
-        }
+            
 
     }
-    float spawned;
+    
+    void mouseReleased(){
+        ui.uiObjects.remove(this);
+    }
+
 }
