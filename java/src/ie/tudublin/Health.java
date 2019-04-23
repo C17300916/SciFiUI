@@ -59,7 +59,13 @@ public class Health extends UiObject
         ui.text("WATER", x + b/3, y +b/4);
         ui.text(fNw + "%",x + b/3, y + b/3);
 
-
+        //exit button
+        ui.stroke(255);
+        ui.fill(20);
+        ui.rectMode(ui.CENTER);
+        ui.rect(x + x/3, y - y/2, a, a/2);
+        ui.fill(255);
+        ui.text("E = exit",x + x/3, y - y/2);
         
     }
 
@@ -130,7 +136,11 @@ public class Health extends UiObject
                 }
             }
         }
-		
+        
+        //despawning health if 'e' pressed
+        if(ui.checkKey('e')){
+            ui.uiObjects.remove(this);
+        }
     }
     float BodTime;
     float fnWTime;

@@ -7,6 +7,7 @@ public class Distance extends UiObject
     float h = 260;
     float w = 600;
     float gap = 20;
+    float a = 75;
     Random rand = new Random();
     public Distance(UI ui, float x, float y, float distance)
     {
@@ -54,6 +55,14 @@ public class Distance extends UiObject
         //distance graph
         
         ui.line(prevX, prevY, distanceTravelled*2 + startPointX, startPointY- time*3);
+
+        //exit button
+        ui.stroke(255);
+        ui.fill(20);
+        ui.rectMode(ui.CENTER);
+        ui.rect(x + x/3, y - y/2, a, a/2);
+        ui.fill(255);
+        ui.text("E = exit",x + x/3, y - y/2);
 		
     }
 
@@ -68,8 +77,8 @@ public class Distance extends UiObject
         currentY += time;*/
 
             
-        spawned += ui.timeDelta;
-        if(spawned >= 30.0){
+        //despawning health if 'e' pressed
+        if(ui.checkKey('e')){
             ui.uiObjects.remove(this);
         }
     
@@ -89,6 +98,6 @@ public class Distance extends UiObject
     
         
     }
-    float spawned;
+    
 }
     
