@@ -27,8 +27,8 @@ public class Distance extends UiObject
     //values for line graph
     float prevX = startPointX;
     float prevY = startPointY;
-    float currentX;
-    float currentY;
+    float currentX = prevX;
+    float currentY =prevY;
    
     @Override
 	public void update() {
@@ -46,14 +46,21 @@ public class Distance extends UiObject
 
         
         //distance graph
-        float d = ui.map(distanceTravelled, 0, distanceTravelled, startPointX, endPointX);
-        float t = ui.map(time, 0, time, startPointY, endPointY);
-        ui.line(prevX, prevY, d, t);
+        
+        ui.line(prevX, prevY, distanceTravelled/20 + startPointX, startPointY- time*10);
 		
     }
 
     @Override
     public void render() {
+
+        //updating variables
+        /*
+        prevX = currentX;
+        currentX += distanceTravelled;
+        prevY = currentY;
+        currentY += time;*/
+
             
         spawned += ui.timeDelta;
         if(spawned >= 10.0){
