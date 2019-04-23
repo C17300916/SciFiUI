@@ -9,6 +9,8 @@ public class UI extends PApplet
     MovingCircle mc;
     float timer1, timer2;
     Stars s;
+    float checkBooster = PI + 0.01f;
+    boolean checkFull = false;
     
 
     boolean[] keys = new boolean[1024];
@@ -38,9 +40,10 @@ public class UI extends PApplet
         fullScreen(); 
     }
 
+    
+
     public void setup()
     {
-        
         uiObjects.add(new Target(this, width / 2, height/2));
         uiObjects.add(new Buttons(this, width/4, height - height/ 6));
         uiObjects.add(new Temperature(this, 80, height / 2));
@@ -53,12 +56,6 @@ public class UI extends PApplet
         uiObjects.add(new MovingCircle(this, 0, width / 2, height * .75f, 25));
         
         noCursor();
-        
-        
-        //uiObjects.add(new Planets(this,width / 2, height / 2, 1 ));
-       // uiObjects.add(new Planet(this, width / 2, height / 2));
-        
-       
         
     }
 
@@ -120,37 +117,21 @@ public class UI extends PApplet
 
         timer1 += timeDelta;
         if(timer1 > .5){
-            if(checkKey('w')){
-
-                Stars s = new Stars(this, width / 2, height / 2, 5);
-                uiObjects.add(s);
-                timer1 = 0;
-            }
-            else{
-                Stars r = new Stars(this, width / 2, height / 2, 1);
-                uiObjects.add(r);
-                timer1 = 0;
-            }
+        
+            Stars r = new Stars(this, width / 2, height / 2, 1 );
+            uiObjects.add(r);
+            timer1 = 0;
             
         }
         timer2 += timeDelta;
-        
-            if (checkKey(' '))
-            {   
-                if(timer2 > 14.0){
-                Planet p = new Planet(this, width / 2, height / 2, 5);
-                uiObjects.add(p);
-                timer2 = 0;
-                }
-            }
-            else{
-                if(timer2 > 14.0){
-                Planet p = new Planet(this, width / 2, height / 2, 1);
-                uiObjects.add(p);
-                timer2 = 0;
-                }
-            }
-            
+
+        if(timer2 > 14.0){
+            Planet p = new Planet(this, width / 2, height / 2, 1);
+            uiObjects.add(p);
+            timer2 = 0;
+        }
+
+           
         
 
 

@@ -23,7 +23,7 @@ public class Planet extends UiObject {
 
     public Planet(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, speed, 0);
+        super(ui, 0, x, y, 0, speed, false);
         
     }
 
@@ -66,7 +66,8 @@ public class Planet extends UiObject {
         PSize2 += rand.nextFloat();
 
         //planet1
-        if(ui.checkKey(' ') && PSize1>=0 ){
+        //booster
+        if(ui.checkKey(' ') && PSize1>=0){
             if(P1y == y){
                 P1x -= 4;
             }
@@ -96,6 +97,7 @@ public class Planet extends UiObject {
 
             }
         }
+        //booster
         if(ui.checkKey(' ') && PSize1>=0 ){
             if(P2y == y){
                 P2x += 4;

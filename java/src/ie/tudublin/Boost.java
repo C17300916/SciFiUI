@@ -3,14 +3,16 @@ package ie.tudublin;
 
 public class Boost extends UiObject
 {
-    public Boost(UI ui, float x, float y)
+    public Boost(UI ui, float x, float y )
     {
-        super(ui, 0, x, y, 0, 0, 0);
+        super(ui, 0, x, y, 0, 0, false);
     }
 
     float size1 = 140;
     float size2 = 110;
     float booster = ui.PI + 0.01f;
+    
+    
     
 
     public void render()
@@ -37,21 +39,29 @@ public class Boost extends UiObject
         if(booster > ui.PI + ui.TWO_PI){
             
             ui.text("BOOST READY", x, y);
+            
         }
+        
+
     }
 	public void update() {
         //booster goes up slowly
-        if(booster < ui.PI + 0.01f + ui.TWO_PI){
+        if(booster < ui.PI + 0.01f + ui.TWO_PI && ! ui.checkKey(' ')){
             booster += 0.006f;
         }
 
-        //resetting booster once its been used
-        if(booster > ui.PI + ui.TWO_PI){
-            if(ui.checkKey(' ')){
-                booster = ui.PI;
-            }
+        //booster goes down once space pressed
+        
+        if(ui.checkKey(' ')){
+            booster -= 0.006f ;
+            
         }
+        
     }
-
+    
+    
+    
+    
+    
     
 }

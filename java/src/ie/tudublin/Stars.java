@@ -15,7 +15,7 @@ public class Stars extends UiObject {
 
     public Stars(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, speed, 0);
+        super(ui, 0, x, y, 0, speed, false);
         
     }
 
@@ -32,6 +32,7 @@ public class Stars extends UiObject {
     public void render()
     {
         ui.pushMatrix();
+
         
         //DRAWING Stars
         if(S_Size1>0){
@@ -52,6 +53,7 @@ public class Stars extends UiObject {
     
     public void update()
     {
+        
         //sizing each star
         if(S_Size1 > 10){
             S_Size1 += .01f;
@@ -85,7 +87,7 @@ public class Stars extends UiObject {
             }
         }
         //using boost
-        if(S_Size1>=0 && ui.checkKey(' ')){
+        if(S_Size1>=0 && ui.checkKey(' ') ){
             
             if(S1y == y) {
                 S1x += speed*2;
@@ -119,7 +121,7 @@ public class Stars extends UiObject {
             }
         }
         //using boost
-        if(S_Size2>=0 && ui.checkKey(' ')){
+        if(S_Size2>=0 && ui.checkKey(' ') ){
             
             if(S2y == y) {
                 S2x -= speed*2;

@@ -12,7 +12,7 @@ public class Fuel extends UiObject
 
     public Fuel(UI ui, float frequency, float x, float y)
     {
-        super(ui,0, x, y, 0, 0, 0);
+        super(ui,0, x, y, 0, 0, false);
     }
     float y2 = 0.1f;
     float fdown = y-y/half;

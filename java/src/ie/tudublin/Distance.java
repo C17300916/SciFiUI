@@ -10,7 +10,7 @@ public class Distance extends UiObject
     Random rand = new Random();
     public Distance(UI ui, float x, float y)
     {
-        super(ui, 0, x, y, 0, 0, 0);
+        super(ui, 0, x, y, 0, 0, false);
     }
 
     float startPoint = x  - w/2 + 10;
