@@ -14,6 +14,7 @@ public class Distance extends UiObject
     }
 
     float startPoint = x  - w/2 + 10;
+    float endPoint = x + w/2 -10;
     float varY = y;
     float prevY =y;
     float nextPoint = startPoint + gap;
@@ -21,26 +22,30 @@ public class Distance extends UiObject
 	public void update() {
         
         ui.stroke(255);
-        ui.noFill();
+        ui.fill(30);
         ui.rect(x, y, w, h);
-        
-        //disatance graph
-            for(int i=0; i< gap; i++){
-                ui.line(startPoint, prevY, nextPoint, varY);
-                startPoint = nextPoint;
-                prevY = varY;
-                nextPoint += 2;
-                if(varY == y){
-                    varY += (h/2 + gap) + rand.nextFloat()*((-(h/2 - gap)) - (h/2 + gap));
-                }
-                if(varY > y){
-                    varY -= rand.nextInt((int)(h/2 - gap));
-                }
-                if(varY < y){
-                    varY += rand.nextInt((int)(h/2 - gap));
-                }
 
+        ui.line(startPoint, y + h/2 - 10, startPoint, y - h/2 + 10);
+        ui.line(startPoint, y + h/2 - 10, endPoint, y + h/2 - 10);
+
+        
+        //distance graph
+        /*for(int i=0; i< gap; i++){
+            ui.line(startPoint, prevY, nextPoint, varY);
+            startPoint = nextPoint;
+            prevY = varY;
+            nextPoint += 2;
+            if(varY == y){
+                varY += (h/2 + gap) + rand.nextFloat()*((-(h/2 - gap)) - (h/2 + gap));
             }
+            if(varY > y){
+                varY -= rand.nextInt((int)(h/2 - gap));
+            }
+            if(varY < y){
+                varY += rand.nextInt((int)(h/2 - gap));
+            }
+
+        }*/
         
         
         
@@ -51,11 +56,16 @@ public class Distance extends UiObject
     @Override
     public void render() {
             
-
-    }
+        spawned += ui.timeDelta;
+        if(spawned >= 10.0){
+            ui.uiObjects.remove(this);
+        }
     
-    void mouseReleased(){
-        ui.uiObjects.remove(this);
+    
+        
     }
-
+    float spawned;
 }
+    
+    
+

@@ -84,6 +84,23 @@ public class Stars extends UiObject {
 
             }
         }
+        //using boost
+        if(S_Size1>=0 && ui.checkKey(' ')){
+            
+            if(S1y == y) {
+                S1x += speed*2;
+            }
+            if (S1y > y) {
+                S1x += speed*2;
+                S1y += speedY;
+
+            }
+            if (S1y < y) {
+                S1x += speed*2;
+                S1y -= speedY;
+
+            }
+        }
         
         if(S_Size2>=0){
             
@@ -97,6 +114,23 @@ public class Stars extends UiObject {
             }
             if (S2y < y) {
                 S2x -= speed;
+                S2y -= speedY;
+
+            }
+        }
+        //using boost
+        if(S_Size2>=0 && ui.checkKey(' ')){
+            
+            if(S2y == y) {
+                S2x -= speed*2;
+            }
+            if (S2y > y) {
+                S2x -= speed*2;
+                S2y += speedY;
+
+            }
+            if (S2y < y) {
+                S2x -= speed*2;
                 S2y -= speedY;
 
             }
