@@ -90,7 +90,7 @@ public class UI extends PApplet
         //if clicking third button
         if(mouseX >= butX-butH && mouseX <= (butX-butH) + butW ){
             if(mouseY >= butY+butH && mouseY <= butY + butH*2){
-                Ammo a = new Ammo(this, width / 2, height / 2);
+                Ammo a = new Ammo(this, width / 2, height / 3);
                 uiObjects.add(a);
             }
         }
