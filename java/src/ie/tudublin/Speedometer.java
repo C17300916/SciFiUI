@@ -65,12 +65,27 @@ public class Speedometer extends UiObject
         ui.circle(x2, y2, 10);
 
         ui.arc(x, y, size * .75f, size * .75f, speed, speed*2 );
+        ui.fill(255);
+        ui.textSize(20);
+        if(!ui.checkKey(' ')){
+            ui.text("28000 Km/h", x, y - 10);
+        }
+        else{
+            ui.text("42000 Km/h", x, y - 10);
+        }
+        
         
     }
 
     @Override
 	public void update() {
 
-		theta = 2 * speed;
+        theta = 2 * speed;
+        if(ui.checkKey(' ')){
+            
+            theta += speed/4;
+            
+        }
+        
     }
 }
