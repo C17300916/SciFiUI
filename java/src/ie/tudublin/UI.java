@@ -75,7 +75,7 @@ public class UI extends PApplet
         if(mouseX >= butX - butH &&  mouseX <= butX - butH + butW ){
             if(mouseY >= butY - butH && mouseY <= butY){
                 
-                Health h = new Health(this, width / 2, height / 2);
+                Health h = new Health(this, width / 2, height / 2 - 100);
                 uiObjects.add(h);
                 
             }
