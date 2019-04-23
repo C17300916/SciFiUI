@@ -37,17 +37,23 @@ public class Distance extends UiObject
         ui.fill(30);
         ui.rect(x, y, w, h);
 
-        //y axis ( time )
-        ui.line(startPointX, startPointY, startPointX, endPointY);
-        ui.text("Time ( seconds )", x, y);
         //x axis ( distance )
+        ui.line(startPointX, startPointY, startPointX, endPointY);
+        ui.fill(255);
+        ui.textSize(15);
+        ui.text("Distance", x, startPointY + gap );
+        ui.text( distanceTravelled + "km" ,  x, startPointY + gap*3);
+        //y axis ( time )
         ui.line(startPointX, startPointY, endPointX, startPointY);
-        ui.text("Distance ( Km )", x, y);
+        ui.fill(255);
+        ui.text("Time " , startPointX - gap*2, y);
+        ui.text(time + "seconds", startPointX - gap*2, y + gap*2);
+
 
         
         //distance graph
         
-        ui.line(prevX, prevY, distanceTravelled/20 + startPointX, startPointY- time*10);
+        ui.line(prevX, prevY, distanceTravelled*1.5f + startPointX, startPointY- time*3);
 		
     }
 
@@ -63,15 +69,21 @@ public class Distance extends UiObject
 
             
         spawned += ui.timeDelta;
-        if(spawned >= 10.0){
+        if(spawned >= 30.0){
             ui.uiObjects.remove(this);
         }
     
         time += ui.timeDelta;
 
         distTime += ui.timeDelta;
-        if(distTime > 1.0){
-            distanceTravelled += speedTravelled;
+        if(distTime > 0.001){
+            if(ui.checkKey(' ')){
+                distanceTravelled += speedTravelled/30;
+            }
+            else{
+                distanceTravelled += speedTravelled/60;
+            }
+            distTime = 0;
         }
 
     
