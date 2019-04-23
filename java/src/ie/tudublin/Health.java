@@ -8,8 +8,8 @@ public class Health extends UiObject
         super(ui, 0, x, y, 0, 0, 0);
     }
 
-    float a = 50;
-    float b = 200;
+    float a = 75;
+    float b = 300;
     //changeable variables for rect 1
     float aChange1 = 0; 
     float bChange1 =0;
@@ -40,7 +40,7 @@ public class Health extends UiObject
         ui.endShape();
         //health shape (outside colour)
         ui.beginShape();
-        ui.stroke(255);
+        ui.noStroke();
         ui.fill(255);
         ui.rectMode(ui.CORNER);
         ui.rect(x -a/2, y - b/2, a, bChange1);
@@ -48,14 +48,16 @@ public class Health extends UiObject
         ui.endShape();
 
         //adding text indicators
-        ui.text("BRAIN", x, y);
-        ui.text(brain + "%", x, y);
-        ui.text("BODY", x, y);
-        ui.text(body + "%", x, y);
-        ui.text("LUNGS", x, y);
-        ui.text(lungs + "%", x, y);
-        ui.text("FOOD & WATER", x, y);
-        ui.text(fNw + "%", x, y);
+        ui.textSize(15);
+        ui.text("BRAIN", x - b/3, y - b/3);
+        ui.text(brain + "%", x - b/3, y - b/5);
+        ui.text("BODY", x - b/3, y +b/5);
+        ui.text(body + "%", x - b/3, y + b/3);
+        ui.text("LUNGS", x + b/3, y - b/3);
+        ui.text(lungs + "%",x + b/3, y - b/5);
+        ui.text("FOOD", x + b/3, y +b/5);
+        ui.text("WATER", x + b/3, y +b/4);
+        ui.text(fNw + "%",x + b/3, y + b/3);
 
 
         
@@ -75,7 +77,9 @@ public class Health extends UiObject
                 bChange1 ++;
             }
             else{
-                bChange1 ++;
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
                 if(aChange2 <= a){
                     aChange2 ++;
                 }
@@ -88,7 +92,9 @@ public class Health extends UiObject
                 bChange1 ++;
             }
             else{
-                bChange1 ++;
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
                 if(aChange2 <= a){
                     aChange2 ++;
                 }
@@ -101,7 +107,9 @@ public class Health extends UiObject
                 bChange1 ++;
             }
             else{
-                bChange1 ++;
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
                 if(aChange2 <= a){
                     aChange2 ++;
                 }
@@ -114,7 +122,9 @@ public class Health extends UiObject
                 bChange1 ++;
             }
             else{
-                bChange1 ++;
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
                 if(aChange2 <= a){
                     aChange2 ++;
                 }
