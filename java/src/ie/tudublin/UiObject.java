@@ -10,10 +10,10 @@ public abstract class UiObject
     protected PVector forward;
     protected float x,y,radius;
     protected float speed;
-    protected boolean full;
+    protected float distance;
     
 
-    public UiObject(UI ui, float frequency, float x, float y, float radius, float speed, boolean full)
+    public UiObject(UI ui, float frequency, float x, float y, float radius, float speed, float distance)
     {
         this.ui = ui;
         this.x = x;

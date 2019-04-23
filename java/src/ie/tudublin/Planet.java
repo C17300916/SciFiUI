@@ -23,7 +23,7 @@ public class Planet extends UiObject {
 
     public Planet(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, speed, false);
+        super(ui, 0, x, y, 0, speed, 0);
         
     }
 

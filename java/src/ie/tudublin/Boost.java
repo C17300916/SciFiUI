@@ -5,7 +5,7 @@ public class Boost extends UiObject
 {
     public Boost(UI ui, float x, float y )
     {
-        super(ui, 0, x, y, 0, 0, false);
+        super(ui, 0, x, y, 0, 0, 0);
     }
 
     float size1 = 140;

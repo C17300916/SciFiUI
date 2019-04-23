@@ -7,7 +7,7 @@ public class Ammo extends UiObject
     float w = 230;
     public Ammo(UI ui, float x, float y)
     {
-        super(ui, 0, x, y, 0, 0, false);
+        super(ui, 0, x, y, 0, 0, 0);
     }
 
     

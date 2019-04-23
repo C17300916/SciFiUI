@@ -7,10 +7,9 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     MovingCircle mc;
-    float timer1, timer2;
+    float timer1, timer2, distTime;
     Stars s;
-    float checkBooster = PI + 0.01f;
-    boolean checkFull = false;
+    
     
 
     boolean[] keys = new boolean[1024];
@@ -97,7 +96,7 @@ public class UI extends PApplet
         //if clicking fourth button
         if(mouseX >= (butX*2 + butX/2) && mouseX <= (butX*2 + butX/2) + butW ){
             if(mouseY >= butY+butH && mouseY <= butY+butH*2){
-                Distance d = new Distance(this, width / 2, height / 2);
+                Distance d = new Distance(this, width / 2, height / 2, 0);
                 uiObjects.add(d);
             }
         }

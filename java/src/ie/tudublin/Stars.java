@@ -15,7 +15,7 @@ public class Stars extends UiObject {
 
     public Stars(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, speed, false);
+        super(ui, 0, x, y, 0, speed, 0);
         
     }
 
