@@ -38,7 +38,7 @@ public class Boost extends UiObject
         ui.textSize(15);
         if(booster > ui.PI + ui.TWO_PI){
             
-            ui.text("BOOST READY", x, y);
+            ui.text("BOOST FULL", x, y);
             
         }
         

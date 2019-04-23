@@ -96,7 +96,7 @@ public class UI extends PApplet
         //if clicking fourth button
         if(mouseX >= (butX*2 + butX/2) && mouseX <= (butX*2 + butX/2) + butW ){
             if(mouseY >= butY+butH && mouseY <= butY+butH*2){
-                Distance d = new Distance(this, width / 2, height / 2, 0);
+                Distance d = new Distance(this, width / 2, height / 2 - 50, 0);
                 uiObjects.add(d);
             }
         }
