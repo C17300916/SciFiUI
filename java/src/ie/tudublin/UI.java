@@ -86,7 +86,7 @@ public class UI extends PApplet
         //if clicking second button
         if(mouseX >= (butX*2 + butX/2) && mouseX <= (butX*2 + butX/2) + butW ){
             if(mouseY >= butY-butH && mouseY <= butY){
-                Map m = new Map(this, width / 2, height / 3);
+                Map m = new Map(this, width / 2, height / 2.5f);
                 uiObjects.add(m);
             }
         }
