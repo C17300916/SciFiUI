@@ -9,6 +9,7 @@ public class UI extends PApplet
     MovingCircle mc;
     float timer1, timer2, distTime;
     Stars s;
+    float TotalAmmo = 300;
     
     
 
@@ -70,6 +71,8 @@ public class UI extends PApplet
         float butW = 230;
         float butH = 50;
 
+        
+
 
         //if clicking first button
         if(mouseX >= butX - butH &&  mouseX <= butX - butH + butW ){
@@ -90,7 +93,7 @@ public class UI extends PApplet
         //if clicking third button
         if(mouseX >= butX-butH && mouseX <= (butX-butH) + butW ){
             if(mouseY >= butY+butH && mouseY <= butY + butH*2){
-                Ammo a = new Ammo(this, width / 2, height / 3);
+                Ammo a = new Ammo(this, width / 2, height / 3, TotalAmmo );
                 uiObjects.add(a);
             }
         }
@@ -115,6 +118,14 @@ public class UI extends PApplet
         float now = millis();
         timeDelta = (now - last) / 1000.0f;
         last = now;
+
+        
+
+        //deteriorating ammo
+        if(checkKey('s')&& TotalAmmo >0){
+            TotalAmmo --;
+
+        }
 
         timer1 += timeDelta;
         if(timer1 > .5){

@@ -8,16 +8,16 @@ public class Ammo extends UiObject
     float g = 20;
     float gap = 40;
     float a = 75;
-    //starting ammo
-    int TotalAmmo = 300;
+    
+    
     
 
-    public Ammo(UI ui, float x, float y)
+    public Ammo(UI ui, float x, float y, float speed)
     {
-        super(ui, 0, x, y, 0, 0, 0);
+        super(ui, 0, x, y, 0, speed, 0);
     }
 
-    
+    int TotalAmmo = (int)speed;
 
     @Override
     public void render() {
@@ -52,10 +52,17 @@ public class Ammo extends UiObject
         ui.bezierVertex(x - w/2, y +h, x - w , y , x, y-h);
         ui.endShape();
 
+        //ammo type text
+        ui.fill(0);
+        ui.textSize(15);
+        ui.text("Ammo Type:", x, y- gap *1.5f);
+        ui.textSize(25);
+        ui.text("Bullets", x , y-gap/1.5f);
+
         //ammo image (3 bullets)
         ui.fill(140,96,2);
         ui.stroke(140,96,2);
-        if(TotalAmmo > 200){ 
+        if(TotalAmmo > 100){ 
             ui.beginShape();
             ui.vertex(x-g, y);
             ui.bezierVertex(x-g, y,x -g/4, y+g*2, x-g/2, y+g*3);
@@ -64,7 +71,7 @@ public class Ammo extends UiObject
             ui.endShape();
         }
         // -gap
-        if(TotalAmmo > 100){
+        if(TotalAmmo > 0){
             ui.beginShape();
             ui.vertex(x-g - gap, y);
             ui.bezierVertex(x-g- gap, y,x -g/4- gap, y+g*2, x-g/2- gap, y+g*3);
@@ -73,7 +80,7 @@ public class Ammo extends UiObject
             ui.endShape();
         }
         // + gap
-        if(TotalAmmo > 0){
+        if(TotalAmmo > 200){
             ui.beginShape();
             ui.vertex(x-g+gap, y);
             ui.bezierVertex(x-g+gap, y,x -g/4+gap, y+g*2, x-g/2+gap, y+g*3);
@@ -99,7 +106,7 @@ public class Ammo extends UiObject
             ui.text("0", x - g*2, y + gap*2.2f);
         }
         ui.textSize(15);
-        ui.text("Rockets", x + g*1.5f, y +gap *2);
+        ui.text("Bullets", x + g*1.5f, y +gap *2);
         ui.text("Remaining", x + g*1.5f, y + gap *2.5f);
         
         //exit button
@@ -124,7 +131,7 @@ public class Ammo extends UiObject
         }
 
         //if s pressed (shoot)
-        if(ui.checkKey('s')){
+        if(ui.checkKey('s')&& TotalAmmo >0){
             TotalAmmo --;
 
         }
