@@ -51,11 +51,11 @@ public class Fuel extends UiObject
     {
         
         if(ui.checkKey(' ')&& y2 < y){
-            y2 =y2 + 0.1f;
+            y2 =y2 + 0.05f;
         }
         else{
             if(y2 < y){
-                y2 =y2 + 0.05f;
+                y2 =y2 + 0.02f;
             }
         }
     }
