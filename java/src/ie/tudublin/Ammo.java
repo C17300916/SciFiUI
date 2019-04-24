@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-
+import processing.core.PConstants;
 public class Ammo extends UiObject
 {
     float h = 120;
@@ -90,7 +90,7 @@ public class Ammo extends UiObject
         }
 
         //equals sign
-        ui.rectMode(ui.CORNER);
+        ui.rectMode(PConstants.CORNER);
         ui.fill(0);
         ui.stroke(0);
         ui.rect(x + gap *1.5f, y + gap/2, h/3, h/8);
@@ -112,7 +112,7 @@ public class Ammo extends UiObject
         //exit button
         ui.stroke(255);
         ui.fill(20);
-        ui.rectMode(ui.CENTER);
+        ui.rectMode(PConstants.CENTER);
         ui.rect(x + x/3, y - y/2, a, a/2);
         ui.fill(255);
         ui.textSize(15);

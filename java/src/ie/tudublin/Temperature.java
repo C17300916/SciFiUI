@@ -39,9 +39,9 @@ public class Temperature extends UiObject
     
 	public void update() {
         time += ui.timeDelta;
-        if(time > 2.0){
+        if(time > 1.0){
             arc_1 = PApplet.PI + rand.nextFloat()*(PApplet.TWO_PI - PApplet.PI);
-            deg = ui.map(arc_1, PApplet.PI, PApplet.TWO_PI,-40, 40);
+            deg = PApplet.map(arc_1, PApplet.PI, PApplet.TWO_PI,-40, 40);
             time =0;
             
         }

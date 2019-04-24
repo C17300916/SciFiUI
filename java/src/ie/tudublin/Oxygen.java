@@ -17,6 +17,12 @@ public class Oxygen extends UiObject
 
     public void render()
     {
+        //adding oxygen heading
+        ui.fill(0);
+        ui.textSize(15);
+        ui.text("Oxygen ",x, fdown - size*2);
+        ui.text("Level", x, fdown - size);
+
         //oxygen design ( 2 rectangles over one another -same as fuel)
         ui.pushMatrix();
         ui.stroke(0, 0, 255);
@@ -43,6 +49,8 @@ public class Oxygen extends UiObject
     }
 
 	public void update() {
-		
+		if(y2 < y){
+            y2 =y2 + 0.01f;
+        }
     }
 }

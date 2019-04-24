@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-
+import processing.core.PConstants;
 public class Boost extends UiObject
 {
     public Boost(UI ui, float x, float y )
@@ -10,7 +10,7 @@ public class Boost extends UiObject
 
     float size1 = 140;
     float size2 = 110;
-    float booster = ui.PI + 0.01f;
+    float booster = PConstants.PI + 0.01f;
     
     
     
@@ -26,7 +26,7 @@ public class Boost extends UiObject
         ui.beginShape();
         //boost going up 
         ui.fill(255,255,0);
-        ui.arc(x, y, size1, size1, ui.PI, booster);
+        ui.arc(x, y, size1, size1, PConstants.PI, booster);
         ui.endShape();
 
         //inner ellipse
@@ -36,7 +36,7 @@ public class Boost extends UiObject
         //checking if booster is full
         ui.fill(0);
         ui.textSize(15);
-        if(booster > ui.PI + ui.TWO_PI){
+        if(booster > PConstants.PI + PConstants.TWO_PI){
             
             ui.text("BOOST FULL", x, y);
             
@@ -46,7 +46,7 @@ public class Boost extends UiObject
     }
 	public void update() {
         //booster goes up slowly
-        if(booster < ui.PI + 0.01f + ui.TWO_PI && ! ui.checkKey(' ')){
+        if(booster < PConstants.PI + 0.01f + PConstants.TWO_PI && ! ui.checkKey(' ')){
             booster += 0.006f;
         }
 

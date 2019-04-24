@@ -19,6 +19,12 @@ public class Fuel extends UiObject
     public void render()
     {
 
+        //adding fuel heading
+        ui.fill(0);
+        ui.textSize(15);
+        ui.text("Fuel ",x, fdown - size*2);
+        ui.text("Level", x, fdown - size);
+
         //fuel design ( 2 rectangles over one another)
         ui.pushMatrix();
         ui.stroke(0, 0, 255);
@@ -49,7 +55,7 @@ public class Fuel extends UiObject
         }
         else{
             if(y2 < y){
-                y2 =y2 + 0.01f;
+                y2 =y2 + 0.05f;
             }
         }
     }

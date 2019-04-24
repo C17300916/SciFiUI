@@ -1,4 +1,6 @@
 package ie.tudublin;
+import processing.core.PApplet;
+import processing.core.PConstants;
 
 import java.util.Random;
 
@@ -46,7 +48,7 @@ public class Map extends UiObject
         ui.stroke(255);
         ui.noFill();
         //outline of map
-        ui.rectMode(ui.CENTER);
+        ui.rectMode(PConstants.CENTER);
         ui.rect(x, y, h+w, h+w);
         ui.rect(x, y, h, h);
         ui.fill(150);
@@ -56,32 +58,32 @@ public class Map extends UiObject
         ui.stroke(0, 0, 255);
         ui.fill(0, 0, 255);
         //mapping random planet one
-        float x1 = ui.map(P1x, 0, 100, x- h/2 + gap, x+h/2 - gap);
-        float y1 = ui.map(P1y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        float x1 = PApplet.map(P1x, 0, 100, x- h/2 + gap, x+h/2 - gap);
+        float y1 = PApplet.map(P1y, 0, 100, y- h/2 + gap, y + h/2 - gap);
         ui.circle(x1, y1, RSize1);
 
         //mapping random planet two
-        float x2 = ui.map(P2x, 0, 100, x- h/2 + gap, x+h/2 - gap);
-        float y2 = ui.map(P2y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        float x2 = PApplet.map(P2x, 0, 100, x- h/2 + gap, x+h/2 - gap);
+        float y2 = PApplet.map(P2y, 0, 100, y- h/2 + gap, y + h/2 - gap);
         ui.circle(x2, y2, RSize2);
 
         //mapping random planet three
-        float x3 = ui.map(P3x, 0, 100, x- h/2 + gap, x+h/2 - gap);
-        float y3 = ui.map(P3y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        float x3 = PApplet.map(P3x, 0, 100, x- h/2 + gap, x+h/2 - gap);
+        float y3 = PApplet.map(P3y, 0, 100, y- h/2 + gap, y + h/2 - gap);
         ui.circle(x3, y3, RSize3);
 
         //mapping random planet four
-        float x4 = ui.map(P4x, 0, 100, x-h/2 + gap, x+h/2 - gap);
-        float y4 = ui.map(P4y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        float x4 = PApplet.map(P4x, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float y4 = PApplet.map(P4y, 0, 100, y- h/2 + gap, y + h/2 - gap);
         ui.circle(x4, y4, RSize4);
 
 
         //route taking 
         ui.stroke(255,255,0);
-        float coX1 = ui.map(X1, 0, 100, x-h/2 + gap, x+h/2 - gap);
-        float coX2 = ui.map(X2, 0, 100, x-h/2 + gap, x+h/2 - gap);
-        float coX3 = ui.map(X3, 0, 100, x-h/2 + gap, x+h/2 - gap);
-        float coX4 = ui.map(X4, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX1 = PApplet.map(X1, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX2 = PApplet.map(X2, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX3 = PApplet.map(X3, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX4 = PApplet.map(X4, 0, 100, x-h/2 + gap, x+h/2 - gap);
 
         ui.strokeWeight(4);
         ui.line(x, y + h/2 -w, coX1, y+ h/4 -w);
@@ -93,7 +95,7 @@ public class Map extends UiObject
         ui.strokeWeight(1);
         ui.stroke(255);
         ui.fill(20);
-        ui.rectMode(ui.CENTER);
+        ui.rectMode(PConstants.CENTER);
         ui.rect(x + x/3, y - y/2, a, a/2);
         ui.fill(255);
         ui.textSize(20);

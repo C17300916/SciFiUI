@@ -1,5 +1,5 @@
 package ie.tudublin;
-
+import processing.core.PConstants;
 
 public class Health extends UiObject
 {
@@ -34,7 +34,7 @@ public class Health extends UiObject
         ui.beginShape();
         ui.stroke(0,0,255);
         ui.fill(0,0,255);
-        ui.rectMode(ui.CENTER);
+        ui.rectMode(PConstants.CENTER);
         ui.rect(x, y, a, b);
         ui.rect(x,y,b,a);
         ui.endShape();
@@ -42,7 +42,7 @@ public class Health extends UiObject
         ui.beginShape();
         ui.noStroke();
         ui.fill(255);
-        ui.rectMode(ui.CORNER);
+        ui.rectMode(PConstants.CORNER);
         ui.rect(x -a/2, y - b/2, a, bChange1);
         ui.rect(x - b/2 ,y - a/2 ,b, aChange2);
         ui.endShape();
@@ -62,7 +62,7 @@ public class Health extends UiObject
         //exit button
         ui.stroke(255);
         ui.fill(20);
-        ui.rectMode(ui.CENTER);
+        ui.rectMode(PConstants.CENTER);
         ui.rect(x + x/3, y - y/2, a, a/2);
         ui.fill(255);
         ui.text("E = exit",x + x/3, y - y/2);

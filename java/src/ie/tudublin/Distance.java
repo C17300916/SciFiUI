@@ -2,6 +2,9 @@ package ie.tudublin;
 
 import java.util.Random;
 
+import processing.core.PConstants;
+
+
 public class Distance extends UiObject
 {
     float h = 260;
@@ -59,7 +62,7 @@ public class Distance extends UiObject
         //exit button
         ui.stroke(255);
         ui.fill(20);
-        ui.rectMode(ui.CENTER);
+        ui.rectMode(PConstants.CENTER);
         ui.rect(x + x/3, y - y/2, a, a/2);
         ui.fill(255);
         ui.text("E = exit",x + x/3, y - y/2);
