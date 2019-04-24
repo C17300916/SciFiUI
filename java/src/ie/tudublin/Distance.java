@@ -69,12 +69,7 @@ public class Distance extends UiObject
     @Override
     public void render() {
 
-        //updating variables
-        /*
-        prevX = currentX;
-        currentX += distanceTravelled;
-        prevY = currentY;
-        currentY += time;*/
+        
 
             
         //despawning health if 'e' pressed
