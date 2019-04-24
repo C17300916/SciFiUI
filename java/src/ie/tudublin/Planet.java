@@ -18,7 +18,7 @@ public class Planet extends UiObject {
     int Pnum1 = rand.nextInt(7);
     int Pnum2 = rand.nextInt(7);
     //planet size    
-    float PSize1 = -60;
+    float PSize1 = -20;
     float PSize2 = 0;
 
     public Planet(UI ui, float x, float y, float speed)
@@ -97,6 +97,8 @@ public class Planet extends UiObject {
 
             }
         }
+
+
         //booster
         if(ui.checkKey(' ') && PSize1>=0 ){
             if(P2y == y){
@@ -126,6 +128,22 @@ public class Planet extends UiObject {
                 P2x += 2;
                 P2y -= .5;
 
+            }
+        }
+
+        //if a planet is shot
+        if(ui.checkKey('s')){
+            if(ui.mouseX < P1x +5 || ui.mouseX > P1x-5){
+                if(ui.mouseY < P1y + 5 || ui.mouseY > P1y -5){
+                    //making planet dissapear
+                    PSize1 = -400;
+                }
+            }
+            if(ui.mouseX < P2x +5 || ui.mouseX > P2x-5){
+                if(ui.mouseY < P2y + 5 || ui.mouseY > P2y -5){
+                    //making planet dissapear
+                    PSize2 = -400;
+                }
             }
         }
         
