@@ -83,12 +83,14 @@ public class Map extends UiObject
         float coX3 = ui.map(X3, 0, 100, x-h/2 + gap, x+h/2 - gap);
         float coX4 = ui.map(X4, 0, 100, x-h/2 + gap, x+h/2 - gap);
 
+        ui.strokeWeight(4);
         ui.line(x, y + h/2 -w, coX1, y+ h/4 -w);
         ui.line(coX1, y+ h/4 -w, coX2, y -w);
         ui.line(coX2, y -w, coX3, y -h/4 + w);
         ui.line(coX3, y -h/4 + w, coX4, y - h/2 + w);
 
         //exit button
+        ui.strokeWeight(1);
         ui.stroke(255);
         ui.fill(20);
         ui.rectMode(ui.CENTER);
