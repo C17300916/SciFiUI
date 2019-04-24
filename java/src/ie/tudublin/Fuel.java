@@ -3,21 +3,23 @@ import processing.core.PConstants;
 
 public class Fuel extends UiObject
 {
-    int size = 50;
+    int size = 25;
     int half = 2;
     int qtr = 4;
-    
+    float y2 = 0.1f;
+    float fdown = y-y/half;
 
     public int fireRate;
 
-    public Fuel(UI ui, float frequency, float x, float y)
+    public Fuel(UI ui, float x, float y)
     {
         super(ui,0, x, y, 0, 0, 0);
     }
-    float y2 = 0.1f;
-    float fdown = y-y/half;
+    
     public void render()
     {
+
+        //fuel design ( 2 rectangles over one another)
         ui.pushMatrix();
         ui.stroke(0, 0, 255);
         ui.fill(0,0,255);
@@ -28,6 +30,7 @@ public class Fuel extends UiObject
         ui.fill(255,0,0);
         ui.rect(x - size/half, fdown, size, y2);
         
+        //different points on the fuel
         ui.stroke(255,0,0);
         ui.line(x-size/1.2f, y - y/half , x + size/1.2f, y-y/half);
         ui.line(x-size/1.2f, y - y/qtr , x + size/1.2f, y-y/qtr);
@@ -42,11 +45,11 @@ public class Fuel extends UiObject
     {
         
         if(ui.checkKey(' ')&& y2 < y){
-            y2 =y2 + 0.5f;
+            y2 =y2 + 0.1f;
         }
         else{
             if(y2 < y){
-                y2 =y2 + 0.1f;
+                y2 =y2 + 0.01f;
             }
         }
     }
