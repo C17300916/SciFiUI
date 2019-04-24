@@ -7,6 +7,7 @@ public class Map extends UiObject
     float h = 250;
     float w = 10;
     float a = 75;
+    float gap = 5;
 
     Random rand = new Random();
     public Map(UI ui, float x, float y)
@@ -32,6 +33,13 @@ public class Map extends UiObject
     int P4x = rand.nextInt(100);
     int P4y = rand.nextInt(100);
 
+    //generating random x and ys for the route taken
+    int X1 = rand.nextInt(100);
+    int X2 = rand.nextInt(100);
+    int X3 = rand.nextInt(100);
+    int X4 = rand.nextInt(100);
+
+
     @Override
     public void render() {
 
@@ -48,32 +56,37 @@ public class Map extends UiObject
         ui.stroke(0, 0, 255);
         ui.fill(0, 0, 255);
         //mapping random planet one
-        float x1 = ui.map(P1x, 0, 100, x-h/2, x+h/2);
-        float y1 = ui.map(P1y, 0, 100, y- h/2, y + h/2);
+        float x1 = ui.map(P1x, 0, 100, x- h/2 + gap, x+h/2 - gap);
+        float y1 = ui.map(P1y, 0, 100, y- h/2 + gap, y + h/2 - gap);
         ui.circle(x1, y1, RSize1);
 
-        //mapping random planet one
-        float x2 = ui.map(P2x, 0, 100, x-h/2, x+h/2);
-        float y2 = ui.map(P2y, 0, 100, y- h/2, y + h/2);
-        ui.circle(x2, y2, RSize1);
+        //mapping random planet two
+        float x2 = ui.map(P2x, 0, 100, x- h/2 + gap, x+h/2 - gap);
+        float y2 = ui.map(P2y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        ui.circle(x2, y2, RSize2);
 
-        //mapping random planet one
-        float x3 = ui.map(P3x, 0, 100, x-h/2, x+h/2);
-        float y3 = ui.map(P3y, 0, 100, y- h/2, y + h/2);
-        ui.circle(x3, y3, RSize1);
+        //mapping random planet three
+        float x3 = ui.map(P3x, 0, 100, x- h/2 + gap, x+h/2 - gap);
+        float y3 = ui.map(P3y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        ui.circle(x3, y3, RSize3);
 
-        //mapping random planet one
-        float x4 = ui.map(P4x, 0, 100, x-h/2, x+h/2);
-        float y4 = ui.map(P4y, 0, 100, y- h/2, y + h/2);
-        ui.circle(x4, y4, RSize1);
+        //mapping random planet four
+        float x4 = ui.map(P4x, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float y4 = ui.map(P4y, 0, 100, y- h/2 + gap, y + h/2 - gap);
+        ui.circle(x4, y4, RSize4);
 
 
         //route taking 
-       /* ui.line(x1, y1, x2, y2);
-        ui.line(x1, y1, x2, y2);
-        ui.line(x1, y1, x2, y2);
-        ui.line(x1, y1, x2, y2);
-        ui.line(x1, y1, x2, y2);*/
+        ui.stroke(255,255,0);
+        float coX1 = ui.map(X1, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX2 = ui.map(X2, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX3 = ui.map(X3, 0, 100, x-h/2 + gap, x+h/2 - gap);
+        float coX4 = ui.map(X4, 0, 100, x-h/2 + gap, x+h/2 - gap);
+
+        ui.line(x, y + h/2 -w, coX1, y+ h/4 -w);
+        ui.line(coX1, y+ h/4 -w, coX2, y -w);
+        ui.line(coX2, y -w, coX3, y -h/4 + w);
+        ui.line(coX3, y -h/4 + w, coX4, y - h/2 + w);
 
         //exit button
         ui.stroke(255);
