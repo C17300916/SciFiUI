@@ -52,5 +52,9 @@ public class Oxygen extends UiObject
 		if(y2 < y){
             y2 =y2 + 0.01f;
         }
+        else{
+            //game ends
+            ui.exit();
+        }
     }
 }
