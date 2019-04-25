@@ -11,6 +11,8 @@ public class Speedometer extends UiObject
     }
 
     float size = 200;
+    float DesSize = 275;
+    float desGap = 20;
     //twelfth 
     float twth = 1/12f;
     //1 and 1 twelfth
@@ -23,8 +25,28 @@ public class Speedometer extends UiObject
     @Override
     public void render() {
 
+        //oustide design 
+        ui.strokeWeight(4);
+        ui.stroke(255,0,0);
+        ui.beginShape();
+        ui.fill(200);
+        ui.vertex(x-size*.7f, y + desGap);
+        ui.vertex(x +size*.7f , y + desGap);
+        ui.vertex(x +size*.7f , y - size/2.5f);
+        ui.vertex(x + size * .3f , y - size/1.35f);
+        ui.vertex(x - size * .3f , y - size/1.35f);
+        ui.vertex(x -size*.7f , y - size/2.5f);
+        ui.vertex(x-size*.7f, y + desGap);
+        ui.endShape();
+        /*
+        ui.line(x-size*.7f, y + desGap, x +size*.7f , y + desGap);
+        ui.line( x +size*.7f, y + desGap,x +size*.7f , y - size/2.5f);
+        ui.line( x +size*.7f , y - size/2.5f,x + size * .3f , y - size/1.35f);
+        ui.line( x +size*.7f , y - size/2.5f,x + size * .3f , y - size/1.35f);*/
+
         //drawing the design of speedometer
         ui.beginShape();
+        ui.strokeWeight(1);
         ui.stroke(0);
         ui.fill(0,0,255);
         ui.arc(x, y, size*1.25f, size*1.25f, speed, speed*2 );
@@ -68,10 +90,10 @@ public class Speedometer extends UiObject
         ui.fill(255);
         ui.textSize(20);
         if(!ui.checkKey(' ')){
-            ui.text("28000 Km/h", x, y - 10);
+            ui.text("28000 Km/h", x, y - 15);
         }
         else{
-            ui.text("42000 Km/h", x, y - 10);
+            ui.text("42000 Km/h", x, y - 15);
         }
         
         

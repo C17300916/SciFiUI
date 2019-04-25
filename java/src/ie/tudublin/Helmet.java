@@ -52,9 +52,11 @@ public class Helmet extends UiObject
         ui.line(x- gap2+design, gap1 -design, x- gap2 + design, y - gap1*2 +design);
         ui.line(x- gap2 + design, y - gap1*2 +design, x- gap2*2 + design,  y- (gap1 + gap1/2) +design);
         ui.line(x- gap2*2 + design,  y- (gap1 + gap1/2) +design,halfW + gap2 - design, y- (gap1 + gap1/2)+design);
+        //bottom 3 lines
         ui.line(halfW + gap2 - design, y- (gap1 + gap1/2)+design,halfW + gap2/2 - design, y- gap1*2 + design);
         ui.line(halfW + gap2/2 - design, y- gap1*2 + design,halfW - gap2/2 +design , y- gap1*2 +design);
         ui.line(halfW - gap2/2 +design , y- gap1*2 +design,halfW - gap2 +design , y- (gap1 + gap1/2) + design);
+        //left side
         ui.line(halfW - gap2 +design , y- (gap1 + gap1/2) + design,gap2*2 -design, y- (gap1 + gap1/2)+design);
         ui.line(gap2*2 -design, y- (gap1 + gap1/2)+design,gap2 -design, y - gap1*2 +design);
         ui.line(gap2 -design, y - gap1*2 +design,gap2 -design, gap1 -design);
