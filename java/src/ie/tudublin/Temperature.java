@@ -28,7 +28,7 @@ public class Temperature extends UiObject
         ui.strokeWeight(4);
         ui.stroke(255,0,0);
         ui.rectMode(PConstants.CENTER);
-        ui.rect(x , y- size1/4, size1 + design, size1 + design);
+        ui.rect(x , y- size1/4, size1 + design*2, size1 + design);
         ui.fill(0);
         ui.textSize(20);
         ui.text("Temperature", x, y- size1/1.5f);
