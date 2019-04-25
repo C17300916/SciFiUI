@@ -77,7 +77,7 @@ public class UI extends PApplet
 
         //if clicking first button
         if(mouseX >= butX - butH &&  mouseX <= butX - butH + butW ){
-            if(mouseY >= butY - butH && mouseY <= butY){
+            if(mouseY >= butY - butH/2 && mouseY <= butY + butH/2){
                 
                 Health h = new Health(this, width / 2, height / 2 - 100);
                 uiObjects.add(h);
@@ -86,7 +86,7 @@ public class UI extends PApplet
         }
         //if clicking second button
         if(mouseX >= (butX*2 + butX/2) && mouseX <= (butX*2 + butX/2) + butW ){
-            if(mouseY >= butY-butH && mouseY <= butY){
+            if(mouseY >= butY - butH/2 && mouseY <= butY + butH/2){
                 Map m = new Map(this, width / 2, height / 2.5f);
                 uiObjects.add(m);
             }

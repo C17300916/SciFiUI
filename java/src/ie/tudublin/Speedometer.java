@@ -25,7 +25,7 @@ public class Speedometer extends UiObject
     @Override
     public void render() {
 
-        //oustide design 
+        //oustide design of speedometer
         ui.strokeWeight(4);
         ui.stroke(255,0,0);
         ui.beginShape();
@@ -38,11 +38,7 @@ public class Speedometer extends UiObject
         ui.vertex(x -size*.7f , y - size/2.5f);
         ui.vertex(x-size*.7f, y + desGap);
         ui.endShape();
-        /*
-        ui.line(x-size*.7f, y + desGap, x +size*.7f , y + desGap);
-        ui.line( x +size*.7f, y + desGap,x +size*.7f , y - size/2.5f);
-        ui.line( x +size*.7f , y - size/2.5f,x + size * .3f , y - size/1.35f);
-        ui.line( x +size*.7f , y - size/2.5f,x + size * .3f , y - size/1.35f);*/
+        
 
         //drawing the design of speedometer
         ui.beginShape();
