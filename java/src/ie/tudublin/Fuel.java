@@ -57,6 +57,9 @@ public class Fuel extends UiObject
             if(y2 < y){
                 y2 =y2 + 0.02f;
             }
+            else{
+                ui.exit();
+            }
         }
     }
         

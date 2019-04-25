@@ -30,7 +30,7 @@ public class Planet extends UiObject {
     //planets spawn points
     float P1x = x;
     float P2x = x;
-    float P1y = y + rand.nextInt(300);
+    float P1y = y - rand.nextInt(300);
     float P2y = y - rand.nextInt(300);
     
 
@@ -100,7 +100,7 @@ public class Planet extends UiObject {
 
 
         //booster
-        if(ui.checkKey(' ') && PSize1>=0 ){
+        if(ui.checkKey(' ') && PSize2>=0 ){
             if(P2y == y){
                 P2x += 4;
             }
