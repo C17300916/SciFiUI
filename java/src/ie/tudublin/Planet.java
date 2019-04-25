@@ -133,14 +133,14 @@ public class Planet extends UiObject {
 
         //if a planet is shot
         if(ui.checkKey('s')){
-            if(ui.mouseX < P1x +5 || ui.mouseX > P1x-5){
-                if(ui.mouseY < P1y + 5 || ui.mouseY > P1y -5){
+            if(ui.mouseX < P1x +PSize1/2 && ui.mouseX > P1x- PSize1/2){
+                if(ui.mouseY < P1y + PSize1/2 && ui.mouseY > P1y -PSize1/2){
                     //making planet dissapear
                     PSize1 = -400;
                 }
             }
-            if(ui.mouseX < P2x +5 || ui.mouseX > P2x-5){
-                if(ui.mouseY < P2y + 5 || ui.mouseY > P2y -5){
+            if(ui.mouseX < P2x +PSize2/2 && ui.mouseX > P2x-PSize2/2){
+                if(ui.mouseY < P2y + PSize2/2 && ui.mouseY > P2y -PSize2/2){
                     //making planet dissapear
                     PSize2 = -400;
                 }

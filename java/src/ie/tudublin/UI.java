@@ -52,6 +52,7 @@ public class UI extends PApplet
         uiObjects.add(new Fuel(this, width -50, height - 300));
         uiObjects.add(new Oxygen(this, width -125, height - 300));
         uiObjects.add(new Speedometer(this, width/2, height * .9f, PI));
+        uiObjects.add(new Instructions(this, width/6, height/12));
         uiObjects.add(new Helmet(this, width, height));
         
 
@@ -119,7 +120,6 @@ public class UI extends PApplet
         float now = millis();
         timeDelta = (now - last) / 1000.0f;
         last = now;
-
         
 
         //deteriorating ammo
