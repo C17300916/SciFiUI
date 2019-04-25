@@ -41,13 +41,13 @@ public class Distance extends UiObject
         ui.fill(30);
         ui.rect(x, y, w, h);
 
-        //x axis ( distance )
+        //y axis ( distance )
         ui.line(startPointX, startPointY, startPointX, endPointY);
         ui.fill(255);
         ui.textSize(15);
         ui.text("Distance", x -gap*4 , startPointY + gap*2 );
         ui.text( distanceTravelled + "km" ,  x + gap, startPointY + gap*2);
-        //y axis ( time )
+        //x axis ( time )
         ui.line(startPointX, startPointY, endPointX, startPointY);
         ui.fill(255);
         ui.text("Time " , startPointX - gap*2, y);
@@ -56,8 +56,15 @@ public class Distance extends UiObject
 
         
         //distance graph
+        if((distanceTravelled*2 + startPointX) <= endPointX &&  startPointY- time*3 >= endPointY){
+            ui.line(prevX, prevY, distanceTravelled*2 + startPointX, startPointY- time*3);
+        }
+        else{
+            distanceTravelled = 0;
+            time = 0                       ;
+        }
         
-        ui.line(prevX, prevY, distanceTravelled*2 + startPointX, startPointY- time*3);
+        
 
         //exit button
         ui.stroke(255);
