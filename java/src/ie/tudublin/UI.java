@@ -67,8 +67,8 @@ public class UI extends PApplet
         uiObjects.add(new Temperature(this, 80, height - height / 2.5f));
         uiObjects.add(new Boost(this, 80, height / 3));
         uiObjects.add(new Radar(this, 1, width/10, height - height / 7, 100));
-        uiObjects.add(new Fuel(this, width -50, height - 300));
-        uiObjects.add(new Oxygen(this, width -125, height - 300));
+        uiObjects.add(new Oxygen(this, width -120, height - 300));
+        uiObjects.add(new Fuel(this, width -55, height - 300));
         uiObjects.add(new Speedometer(this, width/2, height * .9f, PI));
         uiObjects.add(new Instructions(this, width/6, height/12));
         uiObjects.add(new Helmet(this, width, height));

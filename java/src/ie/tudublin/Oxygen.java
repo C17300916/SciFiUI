@@ -20,7 +20,7 @@ public class Oxygen extends UiObject
         //adding oxygen heading
         ui.fill(0);
         ui.textSize(15);
-        ui.text("Oxygen ",x, fdown - size*2);
+        ui.text("Oxygen ",x, fdown - size*1.7f);
         ui.text("Level", x, fdown - size);
 
         //oxygen design ( 2 rectangles over one another -same as fuel)
