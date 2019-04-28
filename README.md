@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Christopher Brady
 
-Student Number: 
+Student Number: C17300916
 
 Fork this repository and use it a starter project for your assignment
 

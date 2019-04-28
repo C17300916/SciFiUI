@@ -20,10 +20,12 @@ public class Instructions extends UiObject
         ui.fill(200);
         ui.rect(x, y, w, h);
         ui.fill(0);
+        ui.textSize(25);
         ui.text(" S = Shoot ", x, y);
         ui.fill(200);
         ui.rect(ui.width - x, y, w, h);
         ui.fill(0);
+        ui.textSize(25);
         ui.text(" Space = Boost ", ui.width - x, y);
         ui.strokeWeight(1);
     }

@@ -68,6 +68,7 @@ public class Health extends UiObject
         //exit button
         ui.stroke(255);
         ui.fill(20);
+        ui.textSize(15);
         ui.rectMode(PConstants.CENTER);
         ui.rect(x1 + x1/3, y1 - y1/2, a, a/2);
         ui.fill(255);

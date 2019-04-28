@@ -236,10 +236,7 @@ public class UI extends PApplet
             c.update();
         }      
 
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
+        
     }
 }
 
