@@ -31,8 +31,9 @@ public class Health extends UiObject
     {
 
         //everything inside large circle for design
-        ui.fill(0,255,0);
-        ui.circle(x, y, b +a );
+        ui.fill(255);
+        ui.stroke(0,0,255);
+        ui.circle(x1, y1, b +a );
 
         //adding health cross shape (inside colour)
         ui.beginShape();
@@ -52,7 +53,8 @@ public class Health extends UiObject
         ui.endShape();
 
         //adding text indicators
-        ui.textSize(15);
+        ui.fill(0,0,255);
+        ui.textSize(20);
         ui.text("BRAIN", x1 - b/3, y1 - b/3);
         ui.text(brain + "%", x1 - b/3, y1 - b/5);
         ui.text("BODY", x1 - b/3, y1 +b/5);
@@ -60,8 +62,8 @@ public class Health extends UiObject
         ui.text("LUNGS", x1 + b/3, y1- b/3);
         ui.text(lungs + "%",x1 + b/3, y1 - b/5);
         ui.text("FOOD", x1 + b/3, y1 +b/5);
-        ui.text("WATER", x1 + b/3, y1 +b/4);
-        ui.text(fNw + "%",x1 + b/3, y1 + b/3);
+        ui.text("WATER", x1 + b/3, y1 +b/3.5f);
+        ui.text(fNw + "%",x1 + b/3, y1 + b/2.7f);
 
         //exit button
         ui.stroke(255);
