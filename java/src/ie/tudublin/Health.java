@@ -3,24 +3,28 @@ import processing.core.PConstants;
 
 public class Health extends UiObject
 {
-    public Health(UI ui, float x, float y)
+    public Health(UI ui,float frequency, float x, float y, float radius, float speed, float distance)
     {
-        super(ui, 0, x, y, 0, 0, 0);
+        super(ui, frequency, x, y, radius, speed, distance);
+        
     }
+
 
     float a = 75;
     float b = 300;
     //changeable variables for rect 1
-    float aChange1 = 0; 
-    float bChange1 =0;
+    float bChange1 =x;
     //changeable variables for rect 2
-    float aChange2 = 0; 
-    float bChange2 =0;
-    //setting all health items to 100%
-    float brain = 100;
-    float body =100;
-    float lungs =100;
-    float fNw =100;//food and water
+    float aChange2 = y; 
+    //setting all health items 
+    float body = frequency;
+    float brain = radius;
+    float fNw = speed;
+    float lungs = distance;
+
+    float x1 = ui.width/2;
+    float y1 = ui.height/2 -100;
+    
 
 
     public void render()
@@ -35,37 +39,37 @@ public class Health extends UiObject
         ui.stroke(0,0,255);
         ui.fill(0,0,255);
         ui.rectMode(PConstants.CENTER);
-        ui.rect(x, y, a, b);
-        ui.rect(x,y,b,a);
+        ui.rect(x1, y1, a, b);
+        ui.rect(x1,y1,b,a);
         ui.endShape();
         //health shape (outside colour)
         ui.beginShape();
         ui.noStroke();
         ui.fill(255);
         ui.rectMode(PConstants.CORNER);
-        ui.rect(x -a/2, y - b/2, a, bChange1);
-        ui.rect(x - b/2 ,y - a/2 ,b, aChange2);
+        ui.rect(x1 -a/2, y1 - b/2, a, bChange1);
+        ui.rect(x1 - b/2 ,y1 - a/2 ,b, aChange2);
         ui.endShape();
 
         //adding text indicators
         ui.textSize(15);
-        ui.text("BRAIN", x - b/3, y - b/3);
-        ui.text(brain + "%", x - b/3, y - b/5);
-        ui.text("BODY", x - b/3, y +b/5);
-        ui.text(body + "%", x - b/3, y + b/3);
-        ui.text("LUNGS", x + b/3, y - b/3);
-        ui.text(lungs + "%",x + b/3, y - b/5);
-        ui.text("FOOD", x + b/3, y +b/5);
-        ui.text("WATER", x + b/3, y +b/4);
-        ui.text(fNw + "%",x + b/3, y + b/3);
+        ui.text("BRAIN", x1 - b/3, y1 - b/3);
+        ui.text(brain + "%", x1 - b/3, y1 - b/5);
+        ui.text("BODY", x1 - b/3, y1 +b/5);
+        ui.text(body + "%", x1 - b/3, y1 + b/3);
+        ui.text("LUNGS", x1 + b/3, y1- b/3);
+        ui.text(lungs + "%",x1 + b/3, y1 - b/5);
+        ui.text("FOOD", x1 + b/3, y1 +b/5);
+        ui.text("WATER", x1 + b/3, y1 +b/4);
+        ui.text(fNw + "%",x1 + b/3, y1 + b/3);
 
         //exit button
         ui.stroke(255);
         ui.fill(20);
         ui.rectMode(PConstants.CENTER);
-        ui.rect(x + x/3, y - y/2, a, a/2);
+        ui.rect(x1 + x1/3, y1 - y1/2, a, a/2);
         ui.fill(255);
-        ui.text("E = exit",x + x/3, y - y/2);
+        ui.text("E = exit",x1 + x1/3, y1 - y1/2);
         
     }
 

@@ -6,11 +6,29 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    MovingCircle mc;
+    
     float timer1, timer2, distTime;
     Stars s;
     float TotalAmmo = 300;
     
+    
+    //setting all health items to 100%
+    float brain = 100;
+    float body =100;
+    float lungs =100;
+    float fNw =100;//food and water
+    //timers for health
+    float BodTime =0;
+    float fnWTime =0;
+    float lungsTime =0;
+    float BrainTime =0;
+    //passing size of health
+    float a = 75;
+    float b = 300;
+    //changeable variables for rect 1
+    float bChange1 =0;
+    //changeable variables for rect 2
+    float aChange2 = 0; 
     
 
     boolean[] keys = new boolean[1024];
@@ -55,10 +73,6 @@ public class UI extends PApplet
         uiObjects.add(new Instructions(this, width/6, height/12));
         uiObjects.add(new Helmet(this, width, height));
         
-
-       
-        uiObjects.add(new MovingCircle(this, 0, width / 2, height * .75f, 25));
-        
         noCursor();
         
     }
@@ -72,7 +86,7 @@ public class UI extends PApplet
         float butX = width/4;
         float butW = 230;
         float butH = 50;
-
+        
         
 
 
@@ -80,9 +94,9 @@ public class UI extends PApplet
         if(mouseX >= butX - butH &&  mouseX <= butX - butH + butW ){
             if(mouseY >= butY - butH/2 && mouseY <= butY + butH/2){
                 
-                Health h = new Health(this, width / 2, height / 2 - 100);
+                Health h = new Health(this,body, bChange1, aChange2 , brain, fNw, lungs);
                 uiObjects.add(h);
-                
+
             }
         }
         //if clicking second button
@@ -144,9 +158,74 @@ public class UI extends PApplet
             timer2 = 0;
         }
 
-           
-        
+        //health deteriorating over time
+        BodTime += timeDelta;
+        BrainTime += timeDelta;
+        fnWTime += timeDelta;
+        lungsTime += timeDelta;
 
+
+        if(BodTime >= 4.0){
+            body --;
+            BodTime =0;
+            if(bChange1 <=b/2 +a/2){
+                bChange1 ++;
+            }
+            else{
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
+                if(aChange2 <= a){
+                    aChange2 ++;
+                }
+            }
+        }
+        if(BrainTime  >= 8.0){
+            brain --;
+            BrainTime =0;
+            if(bChange1 <=b/2 +a/2){
+                bChange1 ++;
+            }
+            else{
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
+                if(aChange2 <= a){
+                    aChange2 ++;
+                }
+            }
+        }
+        if(fnWTime >= 20.0){
+            fNw --;
+            fnWTime =0;
+            if(bChange1 <=b/2 +a/2){
+                bChange1 ++;
+            }
+            else{
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
+                if(aChange2 <= a){
+                    aChange2 ++;
+                }
+            }
+        }
+        if(lungsTime >= 17.0){
+            lungs --;
+            lungsTime =0;
+            if(bChange1 <=b/2 +a/2){
+                bChange1 ++;
+            }
+            else{
+                if(bChange1 <= 200){
+                    bChange1 ++;
+                }
+                if(aChange2 <= a){
+                    aChange2 ++;
+                }
+            }
+        }
+  
 
         //text("Ellapsed: "+ timer, 10, 200);
 

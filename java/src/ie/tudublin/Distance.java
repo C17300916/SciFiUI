@@ -72,6 +72,7 @@ public class Distance extends UiObject
         ui.rectMode(PConstants.CENTER);
         ui.rect(x + x/3, y - y/2, a, a/2);
         ui.fill(255);
+        ui.textSize(15);
         ui.text("E = exit",x + x/3, y - y/2);
 		
     }

@@ -23,7 +23,7 @@ public abstract class UiObject
         this.radius = radius;
         this.frequency = frequency;
         this.speed = speed;
-        
+        this.distance = distance;
 
     }
 
