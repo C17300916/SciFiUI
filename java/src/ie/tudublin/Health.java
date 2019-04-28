@@ -77,80 +77,10 @@ public class Health extends UiObject
     }
 
 	public void update() {
-        //health deteriorating over time
-        BodTime += ui.timeDelta;
-        BrainTime += ui.timeDelta;
-        fnWTime += ui.timeDelta;
-        lungsTime += ui.timeDelta;
-
-        if(BodTime >= 2.0){
-            body --;
-            BodTime =0;
-            if(bChange1 <=b/2 +a/2){
-                bChange1 ++;
-            }
-            else{
-                if(bChange1 <= 200){
-                    bChange1 ++;
-                }
-                if(aChange2 <= a){
-                    aChange2 ++;
-                }
-            }
-        }
-        if(BrainTime  >= 5.0){
-            brain --;
-            BrainTime =0;
-            if(bChange1 <=b/2 +a/2){
-                bChange1 ++;
-            }
-            else{
-                if(bChange1 <= 200){
-                    bChange1 ++;
-                }
-                if(aChange2 <= a){
-                    aChange2 ++;
-                }
-            }
-        }
-        if(fnWTime >= 20.0){
-            fNw --;
-            fnWTime =0;
-            if(bChange1 <=b/2 +a/2){
-                bChange1 ++;
-            }
-            else{
-                if(bChange1 <= 200){
-                    bChange1 ++;
-                }
-                if(aChange2 <= a){
-                    aChange2 ++;
-                }
-            }
-        }
-        if(lungsTime >= 17.0){
-            lungs --;
-            lungsTime =0;
-            if(bChange1 <=b/2 +a/2){
-                bChange1 ++;
-            }
-            else{
-                if(bChange1 <= 200){
-                    bChange1 ++;
-                }
-                if(aChange2 <= a){
-                    aChange2 ++;
-                }
-            }
-        }
         
         //despawning health if 'e' pressed
         if(ui.checkKey('e')){
             ui.uiObjects.remove(this);
         }
     }
-    float BodTime;
-    float fnWTime;
-    float lungsTime;
-    float BrainTime;
 }
