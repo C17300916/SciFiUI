@@ -145,7 +145,7 @@ public class UI extends PApplet
         timer1 += timeDelta;
         if(timer1 > .5){
         
-            Stars r = new Stars(this, width / 2, height / 2, 1 );
+            Stars r = new Stars(this, width / 2, height / 2, 1.5f);
             uiObjects.add(r);
             timer1 = 0;
             
@@ -153,7 +153,7 @@ public class UI extends PApplet
         timer2 += timeDelta;
 
         if(timer2 > 14.0){
-            Planet p = new Planet(this, width / 2, height / 2, 1);
+            Planet p = new Planet(this, width / 2, height / 2, 2);
             uiObjects.add(p);
             timer2 = 0;
         }

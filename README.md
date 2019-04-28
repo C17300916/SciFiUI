@@ -4,9 +4,12 @@ Name: Christopher Brady
 
 Student Number: C17300916
 
-Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
+
+My User Interface was originally inspired by the idea of Iron Man. I wanted to create an interface that could be seen inside a helmet of some sort of flying suit
+through space. I started this project by designing the space in the background, this took a lot of time as I decided to use random variables for the colours of
+the planets and also initially the size. 
 
 # Instructions
 

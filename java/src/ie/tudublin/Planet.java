@@ -69,30 +69,30 @@ public class Planet extends UiObject {
         //booster
         if(ui.checkKey(' ') && PSize1>=0){
             if(P1y == y){
-                P1x -= 4;
+                P1x -= speed*2;
             }
             if(P1y > y){
-                P1x -= 4;
+                P1x -= speed*2;
                 P1y += .5;
 
             }
             if(P1y < y){
-                P1x -= 4;
+                P1x -= speed*2;
                 P1y -= .5;
 
             }
         }
         else if(PSize1>=0 ){
             if(P1y == y){
-                P1x -= 2;
+                P1x -= speed;
             }
             if(P1y > y){
-                P1x -= 2;
+                P1x -= speed;
                 P1y += .5;
 
             }
             if(P1y < y){
-                P1x -= 2;
+                P1x -= speed;
                 P1y -= .5;
 
             }
@@ -102,30 +102,30 @@ public class Planet extends UiObject {
         //booster
         if(ui.checkKey(' ') && PSize2>=0 ){
             if(P2y == y){
-                P2x += 4;
+                P2x += speed*2;
             }
             if(P2y > y){
-                P2x += 4;
+                P2x += speed*2;
                 P2y += .5;
 
             }
             if(P2y < y){
-                P2x += 4;
+                P2x += speed*2;
                 P2y -= .5;
 
             }
         }
         else if(PSize2>=0){
             if(P2y == y){
-                P2x += 2;
+                P2x += speed;
             }
             if(P2y > y){
-                P2x += 2;
+                P2x += speed;
                 P2y += .5;
 
             }
             if(P2y < y){
-                P2x += 2;
+                P2x += speed;
                 P2y -= .5;
 
             }
