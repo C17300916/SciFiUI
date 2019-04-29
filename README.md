@@ -61,7 +61,9 @@ clicking the target on a button will open them
 # How it works
 
 # What I am most proud of in the assignment
-I was successfully able to connect all of the objects through inheritence and ---- which allowed them to work simultaneously and react to certain events simultaneously too. The progress i made
+The progress i made throughout this project was a very satisfying and rewarding accomplishment. I ensured from my very first commit back on the 27th of March that I continually and gradually made commits and changes to my project most days, which was a very beneficial way of doing the project. This method is something that I would not have done in the past but will definitely do in the future due to its many benefits such as taking the pressure off and allowing me see my progress over time. 
+
+The main part of the project that I am proud of though, is the overall aesthetic and usabilty of the system I created. I was really happy in the success I had of allowing the user to boost, speed up or even shoot with the interface, and the connectivity that these functions had with other objects and classes through inheritance and polymorphism. This functionality adds a game aspect to my interface which I really enjoyed creating and has definitely inspired me to make more programs and even games like this. The improvement of my skill and understanding of java was very satisfactory also, as it allowed me to learn while enjoying the experience of making the interface.  
 
 # Markdown Tutorial
 
