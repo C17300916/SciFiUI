@@ -165,30 +165,36 @@ public class UI extends PApplet
         lungsTime += timeDelta;
 
 
-        if(BodTime >= 4.0){
+        if(BodTime >= 11.0){
             body --;
             BodTime =0;
-            if(bChange1 <=b/2 +a/2){
+            if(bChange1 <=b/2 -a/2){
                 bChange1 ++;
             }
             else{
-                if(bChange1 <= 200){
+                if(bChange1 <= b){
                     bChange1 ++;
+                }
+                else{
+                    exit();
                 }
                 if(aChange2 <= a){
                     aChange2 ++;
                 }
             }
         }
-        if(BrainTime  >= 8.0){
+        if(BrainTime  >= 12.0){
             brain --;
             BrainTime =0;
-            if(bChange1 <=b/2 +a/2){
+            if(bChange1 <=b/2 -a/2){
                 bChange1 ++;
             }
             else{
-                if(bChange1 <= 200){
+                if(bChange1 <= b){
                     bChange1 ++;
+                }
+                else{
+                    exit();
                 }
                 if(aChange2 <= a){
                     aChange2 ++;
@@ -198,12 +204,15 @@ public class UI extends PApplet
         if(fnWTime >= 20.0){
             fNw --;
             fnWTime =0;
-            if(bChange1 <=b/2 +a/2){
+            if(bChange1 <=b/2 -a/2){
                 bChange1 ++;
             }
             else{
-                if(bChange1 <= 200){
+                if(bChange1 <= b){
                     bChange1 ++;
+                }
+                else{
+                    exit();
                 }
                 if(aChange2 <= a){
                     aChange2 ++;
@@ -213,12 +222,15 @@ public class UI extends PApplet
         if(lungsTime >= 17.0){
             lungs --;
             lungsTime =0;
-            if(bChange1 <=b/2 +a/2){
+            if(bChange1 <=b/2 -a/2){
                 bChange1 ++;
             }
             else{
-                if(bChange1 <= 200){
+                if(bChange1 <= b){
                     bChange1 ++;
+                }
+                else{
+                    exit();
                 }
                 if(aChange2 <= a){
                     aChange2 ++;
