@@ -11,15 +11,34 @@ My User Interface was originally inspired by the idea of Iron Man. I wanted to c
 
 # Instructions
 
-I added in some visual instructions to my system also but the instructions for my system are as follows:
+### I added in some visual instructions to my system also but the *button* instructions for my system are as follows:
 
--*SPACE* ==> Applies boost to the UI, you should visually be able to see the stars / planets move faster, the fuel level should decrease faster, the boost level should also decrease, and the speedometer should increase to it's boost speed.
+- *SPACE* ==> Applies boost to the UI, you should visually be able to see the stars / planets move faster, the fuel level should decrease faster, the boost level should also decrease, and the speedometer should increase to it's boost speed.
 
--*S*     ==> Allows the user to shoot a planet when the target is on it, you should see the planet dissapear and the bullet count decrease in Ammo.
+- *S*     ==> Allows the user to shoot a planet when the target is on it, you should see the planet dissapear and the bullet count decrease in Ammo.
 
--*e*     ==> Enables a user to exit a pressed button like map, you should see the map dissapear.
+- *e*     ==> Enables a user to exit a pressed button like map, you should see the map dissapear.
 
--*mouseClick* ==> on a button will open them and display different objects eg. a map
+- *mouseClick* ==> on a button will open them and display different objects eg. a map
+
+### Different Objects that can be seen :
+
+- Map: This generates a random route ( in yellow ) and shows planets that it has to go by in blue which spawn in random spots and at random sizes.
+
+- Health: This shows the overall health of the user in the system. The health automatically decreases over time in relation to four different properties: Brain ( *This goes down as the person is alone in space and his mental health would, in theory, decrease over time because of this sense of abandonement* ), Body ( *This goes down due to the assumption that being in space in just a metal suit will have a negative effect on your body* ), Lungs( *As the level of oxygen is very low and the change of atmospheric pressure is so prominent, I thought lungs would be an appropriate measure of health* ) and finally, Food & Water ( *This is an obvious health attribute as these levels are the most important for a humans health* ). These attributes decrease in tandem and are shown visually through a cross.
+ 
+- Temperature: This object tells the temperature of the suit. For this interface I decided to make it increment and decrement randomly and rapidly. My decision for this was to simulate the unpredictable temperatures in space where if close to a planet or stars it could be extremely warm and when in deep space it could be extremely cold. 
+
+- Distance: This object displays a distance time graph and resets every time it is spawned. 
+
+- Ammo:
+
+- Fuel and Oxygen:
+
+- Boost: 
+
+- Speedometer:
+
 
 # How it works
 
