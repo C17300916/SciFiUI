@@ -10,13 +10,6 @@ Student Number: C17300916
 My User Interface was originally inspired by the idea of Iron Man. I wanted to create an interface that could be seen inside a helmet of some sort of flying suit through space. I started this project by designing the space in the background, this took a lot of time as I decided to use random variables for the colours of the planets and also initially the size. I decided to go for a simplisitic look with red and white being the dominant colours of the interface, red being a significant colour for Iron Man. Each object that appears on the interface of the helmet is surrounded by a red border to adhere to this design and adapt to a more modern look. The overall helmet design shows where the user can look out into space and the digital interface they will see also.
 
 # Instructions
-I added in some visual instructions to my system also but the instructions for my system are as follows:
-" SPACE " ==> applies boost to the UI
-" S "     ==> shoots bullets which are kept tract of in Ammo
-" e " ==> will exit a button that has been pressed
-clicking the target on a button will open them
-
-
 
 ### I added in some visual instructions to my system also but the *button* instructions for my system are as follows:
 
@@ -64,6 +57,7 @@ clicking the target on a button will open them
 The progress i made throughout this project was a very satisfying and rewarding accomplishment. I ensured from my very first commit back on the 27th of March that I continually and gradually made commits and changes to my project most days, which was a very beneficial way of doing the project. This method is something that I would not have done in the past but will definitely do in the future due to its many benefits such as taking the pressure off and allowing me see my progress over time. 
 
 The main part of the project that I am proud of though, is the overall aesthetic and usabilty of the system I created. I was really happy in the success I had of allowing the user to boost, speed up or even shoot with the interface, and the connectivity that these functions had with other objects and classes through inheritance and polymorphism. This functionality adds a game aspect to my interface which I really enjoyed creating and has definitely inspired me to make more programs and even games like this. The improvement of my skill and understanding of java was very satisfactory also, as it allowed me to learn while enjoying the experience of making the interface.  
+![An image](images/Interface.PNG)
 
 # Markdown Tutorial
 
