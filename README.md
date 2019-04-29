@@ -7,7 +7,7 @@ Student Number: C17300916
 
 # Description of the assignment
 
-My User Interface was originally inspired by the idea of Iron Man. I wanted to create an interface that could be seen inside a helmet of some sort of flying suit through space. I started this project by designing the space in the background, this took a lot of time as I decided to use random variables for the colours of the planets and also initially the size. 
+My User Interface was originally inspired by the idea of Iron Man. I wanted to create an interface that could be seen inside a helmet of some sort of flying suit through space. I started this project by designing the space in the background, this took a lot of time as I decided to use random variables for the colours of the planets and also initially the size. I decided to go for a simplisitic look with red and white being the dominant colours of the interface, red being a significant colour for Iron Man. Each object that appears on the interface of the helmet is surrounded by a red border to adhere to this design and adapt to a more modern look. The overall helmet design shows where the user can look out into space and the digital interface they will see also.
 
 # Instructions
 I added in some visual instructions to my system also but the instructions for my system are as follows:
@@ -30,7 +30,7 @@ clicking the target on a button will open them
 
 ### Different Features that can be seen :
 
-- Map: This generates a random route ( in yellow ) and shows planets that it has to go by in blue which spawn in random spots and at random sizes.
+- Map: When the map button is clicked a map is generated with a random route ( in yellow ) from a stationary starting point and shows planets that it has to go by in blue which spawn in random spots and at random sizes. The purpose of the map is to show the user where they are travelling. Although each time the map button is pressed a different route is generated, the fact that the start point is stationary simulates the users progress as if the map changes as the user progresses.
 ![An image](images/Map.PNG)
 
 - Health: This shows the overall health of the user in the system. The health automatically decreases over time in relation to four different properties: Brain ( *This goes down as the person is alone in space and his mental health would, in theory, decrease over time because of this sense of abandonement* ), Body ( *This goes down due to the assumption that being in space in just a metal suit will have a negative effect on your body* ), Lungs( *As the level of oxygen is very low and the change of atmospheric pressure is so prominent, I thought lungs would be an appropriate measure of health* ) and finally, Food & Water ( *This is an obvious health attribute as these levels are the most important for a humans health* ). These attributes decrease in tandem and are shown visually through a cross.
@@ -45,7 +45,7 @@ clicking the target on a button will open them
 - Ammo: This button, when clicked, displays the amount of ammo the user has remaining. In this interface the user can shoot and destroy planets by pressing s, which decrements the amount of ammo simultaneously.
 ![An image](images/Ammo.PNG)
 
-- Fuel and Oxygen: These two objects appear side by side in the system and allow the user to keep track of the amount of fuel and oxygen they have left. They both decrement over time, and if one runs out the interface ends. The fuel decreases faster and also reacts to when the boost is used as it runs down faster.
+- Fuel and Oxygen: These two objects appear side by side in the system and allow the user to keep track of the amount of fuel and oxygen they have left. They both decrement over time, and if one runs out the interface ends. The fuel decreases faster and also reacts to when the boost is used as it runs down faster. These objects are the largest on the base screen of the interface and the reasoning behind this was the importance behind them and so the user could keep track.
 ![An image](images/Ox&Fuel.PNG)
 
 - Boost: This fesature is one of the core objects of this system as it affects so many others when used. It appears on the left side of the interface and automatically fills itself and can be used at any time if SPACEBAR is pressed which decreases it. It acts as if it is charged by the system while running. Another cool feature is the fact that it highlights yellow when full.
@@ -61,8 +61,7 @@ clicking the target on a button will open them
 # How it works
 
 # What I am most proud of in the assignment
-I was successfully able to connect all of the objects through inheritence and ---- which allowed them to work simultaneously and react to certain events simultaneously 
-too. 
+I was successfully able to connect all of the objects through inheritence and ---- which allowed them to work simultaneously and react to certain events simultaneously too. The progress i made
 
 # Markdown Tutorial
 
