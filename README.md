@@ -165,71 +165,10 @@ The progress i made throughout this project was a very satisfying and rewarding 
 The main part of the project that I am proud of though, is the overall aesthetic and usabilty of the system I created. I was really happy in the success I had of allowing the user to boost, speed up or even shoot with the interface, and the connectivity that these functions had with other objects and classes through inheritance and polymorphism. This functionality adds a game aspect to my interface which I really enjoyed creating and has definitely inspired me to make more programs and even games like this. The improvement of my skill and understanding of java was very satisfactory also, as it allowed me to learn while enjoying the experience of making the interface.  
 
 
-# Markdown Tutorial
+# Youtube Video
 
-This is *emphasis*
 
-This is a bulleted list
+[![YouTube](https://i.ytimg.com/vi/Znx7I8AOQS4/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAH0ku31JBixxPYzKlRyUqcRPUjvw)](https://www.youtube.com/watch?v=Znx7I8AOQS4)
 
-- Item
-- Item
 
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](https://github.com/C17300916/SciFiUI)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
