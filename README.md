@@ -7,7 +7,8 @@ Student Number: C17300916
 
 # Description of the assignment
 
-My User Interface was originally inspired by the idea of Iron Man. I wanted to create an interface that could be seen inside a helmet of some sort of flying suit through space. I started this project by designing the space in the background, this took a lot of time as I decided to use random variables for the colours of the planets and also initially the size. I decided to go for a simplisitic look with red and white being the dominant colours of the interface, red being a significant colour for Iron Man. Each object that appears on the interface of the helmet is surrounded by a red border to adhere to this design and adapt to a more modern look. The overall helmet design shows where the user can look out into space and the digital interface they will see also.
+For this project we were given the task of creating a sci-fi inspired interface using java and processing. My User Interface was originally inspired by the idea of Iron Man. I wanted to create an interface that could be seen inside a helmet of some sort of flying suit through space. I started this project by designing the space in the background, this took a lot of time as I decided to use random variables for the colours of the planets and also initially the size. I decided to go for a simplisitic look with red and white being the dominant colours of the interface, red being a significant colour for Iron Man. Each object that appears on the interface of the helmet is surrounded by a red border to adhere to this design and adapt to a more modern look. The overall helmet design shows where the user can look out into space and the digital interface they will see also. A main part of my interface design was functionality as I wanted to allow the user to see how the interface actually worked through some interactivity with the speed, shooting and other key features of the ship. The final look of my interface is shown below but I will provide a link to a youtube video further down which will display the interface's interactivity and design more clearly.
+![An image](images/Interface.PNG)
 
 # Instructions
 
@@ -52,12 +53,114 @@ My User Interface was originally inspired by the idea of Iron Man. I wanted to c
 
 
 # How it works
+As I have mentioned before, I used a combination of java and processing to complete this project. The main body of my code is in UI.java as this is where all of the other classes I created are called from here. Every additional class is added to an array list of uiObjects. Although I struggled with the use and understanding of polymorphism at the star, I think this method was the most intuitive way of structuring and coding my project.
+
+*Example of the arraylist i used*:
+```Java
+public ArrayList<UiObject> uiObjects = new ArrayList<UiObject>();
+uiObjects.add(new Target(this, width / 2, height/2));
+uiObjects.add(new Buttons(this, width/4, height - height/ 6));
+uiObjects.add(new Temperature(this, 80, height - height / 2.5f));
+uiObjects.add(new Boost(this, 80, height / 3));
+uiObjects.add(new Radar(this, 1, width/10, height - height / 7, 100));
+uiObjects.add(new Oxygen(this, width -120, height - 300));
+uiObjects.add(new Fuel(this, width -55, height - 300));
+uiObjects.add(new Speedometer(this, width/2, height * .9f, PI));
+uiObjects.add(new Instructions(this, width/6, height/12));
+uiObjects.add(new Helmet(this, width, height));
+***
+
+From this I also used inheritance as each class created inherited from the abstract class uiObjects.java. This was very helpful as the majority of the other classes I created used similar values or variables. Each class also inherited the render and update methods which added some uniform structure to my code Any drawing or initialising of an object I completed within the render method and any update or change to this drawing I added in update.
+
+***Java
+public class Fuel extends UiObject
+{
+    int size = 25;
+    int half = 2;
+    int qtr = 4;
+    float y2 = 0.1f;
+    float fdown = y-y/half;
+    //distance to oxygen + 5
+    float designX = 100;
+    float designY = 5;
+
+    public int fireRate;
+
+    public Fuel(UI ui, float x, float y)
+    {
+        super(ui,0, x, y, 0, 0, 0);
+    }
+    
+    public void render()
+    {
+
+        //outside design surrounding both oxygen and fuel
+        ui.rectMode(PConstants.CORNER);
+        ui.strokeWeight(4);
+        ui.stroke(255,0,0);
+        ui.fill(200);
+        ui.rect(x -designX, fdown - size*2 -designY, designX + size + designY, y + designY*2 + size*2);
+        ui.line(x -designX/3.2f, fdown - size*2 -designY, x -designX/3.2f, y+y/half+ half);
+
+
+        //adding fuel heading
+        ui.strokeWeight(1);
+        ui.fill(0);
+        ui.textSize(15);
+        ui.text("Fuel ",x, fdown - size*1.7f);
+        ui.text("Level", x, fdown - size);
+
+        //fuel design ( 2 rectangles over one another)
+        ui.pushMatrix();
+        ui.stroke(0, 0, 255);
+        ui.fill(0,0,255);
+        ui.rectMode(PConstants.CENTER);
+        ui.rect(x, y, size, y);
+        ui.stroke(255, 0, 0);
+        ui.rectMode(PConstants.CORNER);
+        ui.fill(255,0,0);
+        ui.rect(x - size/half, fdown, size, y2);
+        
+        //different points on the fuel
+        ui.stroke(255,0,0);
+        ui.line(x-size/1.2f, y - y/half , x + size/1.2f, y-y/half);
+        ui.line(x-size/1.2f, y - y/qtr , x + size/1.2f, y-y/qtr);
+        ui.line(x-size/1.2f,  y , x + size/1.2f, y);
+        ui.line(x-size/1.2f, y + y/qtr , x + size/1.2f, y+y/qtr);
+        ui.line(x-size/1.2f, y + y/half , x + size/1.2f, y+y/half);
+
+        ui.popMatrix();
+    }
+
+    public void update()
+    {
+        
+        if(ui.checkKey(' ')&& y2 < y){
+            y2 =y2 + 0.05f;
+        }
+        else{
+            if(y2 < y){
+                y2 =y2 + 0.02f;
+            }
+            else{
+                ui.exit();
+            }
+        }
+    }
+        
+        
+}
+***
+Above I have given an example of how a typical class that I created was implemented. In this example I set a lot of variables at the top of the Fuel.java, the reasoning of these was to avoid hard coding. Next, you can see the super class being called. In this example I only passed three variables ui, x and y. The ui variable allowed me to inherit all of the properties of the ui.java including PApplet, this is why a lot of my code includes ui. before it. In some cases, for constant variables such as PI, an error would occur as a static variable must be declared in a static way. In order to address this I imported a PConstants library and used constants like PConstants.PI which fixed the problem.
+
+For the majority of the interactivity of my program, I used built in functions such as checkKey and mouseClicked. Although tricky to use at stages, I eventually got the hang of them and definitely have a greater understanding.
+Overall the system works in tandem due to all classes being called by ui.java, this allowed me to control when certain things would be called and added a more simplistic layout for me to understand
 
 # What I am most proud of in the assignment
 The progress i made throughout this project was a very satisfying and rewarding accomplishment. I ensured from my very first commit back on the 27th of March that I continually and gradually made commits and changes to my project most days, which was a very beneficial way of doing the project. This method is something that I would not have done in the past but will definitely do in the future due to its many benefits such as taking the pressure off and allowing me see my progress over time. 
 
 The main part of the project that I am proud of though, is the overall aesthetic and usabilty of the system I created. I was really happy in the success I had of allowing the user to boost, speed up or even shoot with the interface, and the connectivity that these functions had with other objects and classes through inheritance and polymorphism. This functionality adds a game aspect to my interface which I really enjoyed creating and has definitely inspired me to make more programs and even games like this. The improvement of my skill and understanding of java was very satisfactory also, as it allowed me to learn while enjoying the experience of making the interface.  
-![An image](images/Interface.PNG)
+
 
 # Markdown Tutorial
 
