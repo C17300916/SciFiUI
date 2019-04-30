@@ -68,11 +68,14 @@ uiObjects.add(new Fuel(this, width -55, height - 300));
 uiObjects.add(new Speedometer(this, width/2, height * .9f, PI));
 uiObjects.add(new Instructions(this, width/6, height/12));
 uiObjects.add(new Helmet(this, width, height));
-***
+```
 
 From this I also used inheritance as each class created inherited from the abstract class uiObjects.java. This was very helpful as the majority of the other classes I created used similar values or variables. Each class also inherited the render and update methods which added some uniform structure to my code Any drawing or initialising of an object I completed within the render method and any update or change to this drawing I added in update.
 
-***Java
+
+
+
+```Java
 public class Fuel extends UiObject
 {
     int size = 25;
@@ -150,7 +153,7 @@ public class Fuel extends UiObject
         
         
 }
-***
+```
 Above I have given an example of how a typical class that I created was implemented. In this example I set a lot of variables at the top of the Fuel.java, the reasoning of these was to avoid hard coding. Next, you can see the super class being called. In this example I only passed three variables ui, x and y. The ui variable allowed me to inherit all of the properties of the ui.java including PApplet, this is why a lot of my code includes ui. before it. In some cases, for constant variables such as PI, an error would occur as a static variable must be declared in a static way. In order to address this I imported a PConstants library and used constants like PConstants.PI which fixed the problem.
 
 For the majority of the interactivity of my program, I used built in functions such as checkKey and mouseClicked. Although tricky to use at stages, I eventually got the hang of them and definitely have a greater understanding.
